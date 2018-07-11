@@ -20,7 +20,10 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.messagesTableView.rowHeight = UITableViewAutomaticDimension
+        self.messagesTableView.estimatedRowHeight = 44
+        
         getExampleData()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
