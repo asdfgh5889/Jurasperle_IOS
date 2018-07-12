@@ -19,7 +19,10 @@ class OwnerMessageCell: UITableViewCell {
         ownerMessageLabel.layer.cornerRadius = 8
         ownerMessageLabel.layer.masksToBounds = true
         
+        
     }
+    
+ 
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
