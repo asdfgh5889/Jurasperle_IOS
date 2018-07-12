@@ -9,12 +9,13 @@
 import UIKit
 
 class MessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-
+    
     @IBOutlet weak var messagesTableView: UITableView!
-    @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var ownerTextField: UITextView!
     @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
-    let messageCellId = "messageCellId"
+    let othersMessageCell = "OthersMessageCell"
+    let ownerMessageCell = "OwnerMessageCell"
     
     var messages = [Message]()
     
@@ -22,15 +23,13 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
-        self.messagesTableView.estimatedRowHeight = 44
-        
+        self.messagesTableView.estimatedRowHeight = 50
         getExampleData()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
-        messageTextField.delegate = self
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,9 +76,9 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    // MARK: - Table delegates
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,47 +86,54 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = messagesTableView.dequeueReusableCell(withIdentifier: messageCellId, for: indexPath) as! MessageTableViewCell
         
-        let message = messages[indexPath.row]
-        
-        // Message text
-        cell.messageLabel.text = message.messageText
-        // Message user
-        if message.messageUserId == 1{
-            cell.messageLabel.textAlignment = .right
-            cell.backgroundColor = .blue
-            cell.messageLabel.textColor = .white
+        switch indexPath.section {
+        case 0:
+            let cell = messagesTableView.dequeueReusableCell(withIdentifier: othersMessageCell, for: indexPath) as! OthersMessageCell
+            let message = messages[indexPath.row]
+            
+            if message.messageUserId == 1
+            {
+                cell.othersMessageLabel.text = message.messageText
+            }
+            return cell
+        case 1:
+            let cell = messagesTableView.dequeueReusableCell(withIdentifier: ownerMessageCell, for: indexPath)as! OwnerMessageCell
+            let message = messages[indexPath.row]
+            if message.messageUserId == 2
+            {
+                cell.ownerMessageLabel.text = message.messageText
+               
+            }
+            return cell
+        default:
+            let cell = messagesTableView.dequeueReusableCell(withIdentifier: ownerMessageCell)
+            return cell!
+            
         }
-        return cell
     }
     
-    // MARK: - Actions
+   
     @IBAction func sendMessageAction(_ sender: Any){
         sendMessage()
     }
     
     func sendMessage(){
-        messageTextField.resignFirstResponder()
-        
-        if let text = messageTextField.text{
+        ownerTextField.resignFirstResponder()
+        if let text = ownerTextField.text{
             let messageToSend = Message()
-            messageToSend.messageUserId = 1
+            messageToSend.messageUserId = 2
             messageToSend.messageText = text
             messages.append(messageToSend)
             messagesTableView.reloadData()
-            messageTextField.text = ""
+            ownerTextField.text = ""
         }
         
     }
     
-    
-   
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         sendMessage()
         return true
     }
-
-   
 
 }

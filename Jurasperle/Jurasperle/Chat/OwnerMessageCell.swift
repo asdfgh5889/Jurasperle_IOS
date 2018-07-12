@@ -8,13 +8,17 @@
 
 import UIKit
 
-class MessageTableViewCell: UITableViewCell {
+class OwnerMessageCell: UITableViewCell {
 
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var ownerMessageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+     
+        ownerMessageLabel.textColor = .white
+        ownerMessageLabel.layer.cornerRadius = 8
+        ownerMessageLabel.layer.masksToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
