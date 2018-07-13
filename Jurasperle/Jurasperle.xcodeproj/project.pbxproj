@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2774459E20F89103004E5F2C /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774459A20F89102004E5F2C /* NetworkController.swift */; };
+		2774459F20F89103004E5F2C /* RequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774459B20F89102004E5F2C /* RequestController.swift */; };
+		277445A020F89103004E5F2C /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774459C20F89102004E5F2C /* NetworkProtocols.swift */; };
+		277445A120F89103004E5F2C /* APIPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774459D20F89102004E5F2C /* APIPaths.swift */; };
+		277445A520F8923F004E5F2C /* LoginPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445A420F8923F004E5F2C /* LoginPostData.swift */; };
+		277445A720F8933C004E5F2C /* QueryItemNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445A620F8933C004E5F2C /* QueryItemNames.swift */; };
+		277445A920F8952F004E5F2C /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445A820F8952F004E5F2C /* Authorization.swift */; };
+		277445AB20F89542004E5F2C /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445AA20F89542004E5F2C /* Protocols.swift */; };
+		277445AD20F8B7BE004E5F2C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445AC20F8B7BE004E5F2C /* Error.swift */; };
+		277445AF20F8B86C004E5F2C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445AE20F8B86C004E5F2C /* Utilities.swift */; };
+		277445B120F8BAF7004E5F2C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445B020F8BAF7004E5F2C /* User.swift */; };
+		277445B320F8BD84004E5F2C /* UserGlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445B220F8BD84004E5F2C /* UserGlobalData.swift */; };
+		277445B520F8BDCC004E5F2C /* LString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277445B420F8BDCC004E5F2C /* LString.swift */; };
 		27B616EC20E7CC0000AC52F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B616EB20E7CC0000AC52F5 /* AppDelegate.swift */; };
 		27B616EE20E7CC0000AC52F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B616ED20E7CC0000AC52F5 /* ViewController.swift */; };
 		27B616F120E7CC0000AC52F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B616EF20E7CC0000AC52F5 /* Main.storyboard */; };
@@ -33,6 +46,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2774459A20F89102004E5F2C /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		2774459B20F89102004E5F2C /* RequestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestController.swift; sourceTree = "<group>"; };
+		2774459C20F89102004E5F2C /* NetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
+		2774459D20F89102004E5F2C /* APIPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPaths.swift; sourceTree = "<group>"; };
+		277445A420F8923F004E5F2C /* LoginPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPostData.swift; sourceTree = "<group>"; };
+		277445A620F8933C004E5F2C /* QueryItemNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItemNames.swift; sourceTree = "<group>"; };
+		277445A820F8952F004E5F2C /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		277445AA20F89542004E5F2C /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		277445AC20F8B7BE004E5F2C /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		277445AE20F8B86C004E5F2C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		277445B020F8BAF7004E5F2C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		277445B220F8BD84004E5F2C /* UserGlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGlobalData.swift; sourceTree = "<group>"; };
+		277445B420F8BDCC004E5F2C /* LString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LString.swift; sourceTree = "<group>"; };
 		27B616E820E7CC0000AC52F5 /* Jurasperle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jurasperle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B616EB20E7CC0000AC52F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27B616ED20E7CC0000AC52F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +97,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2774459920F890E2004E5F2C /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				2774459A20F89102004E5F2C /* NetworkController.swift */,
+				2774459B20F89102004E5F2C /* RequestController.swift */,
+				2774459D20F89102004E5F2C /* APIPaths.swift */,
+				2774459C20F89102004E5F2C /* NetworkProtocols.swift */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		277445A220F891D7004E5F2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				277445A320F891EB004E5F2C /* PostData */,
+				277445A820F8952F004E5F2C /* Authorization.swift */,
+				277445AA20F89542004E5F2C /* Protocols.swift */,
+				277445AC20F8B7BE004E5F2C /* Error.swift */,
+				277445B020F8BAF7004E5F2C /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		277445A320F891EB004E5F2C /* PostData */ = {
+			isa = PBXGroup;
+			children = (
+				277445A420F8923F004E5F2C /* LoginPostData.swift */,
+				277445A620F8933C004E5F2C /* QueryItemNames.swift */,
+			);
+			path = PostData;
+			sourceTree = "<group>";
+		};
 		27B616DF20E7CC0000AC52F5 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +148,11 @@
 		27B616EA20E7CC0000AC52F5 /* Jurasperle */ = {
 			isa = PBXGroup;
 			children = (
+				277445AE20F8B86C004E5F2C /* Utilities.swift */,
+				277445B220F8BD84004E5F2C /* UserGlobalData.swift */,
+				277445B420F8BDCC004E5F2C /* LString.swift */,
+				277445A220F891D7004E5F2C /* Models */,
+				2774459920F890E2004E5F2C /* Network Layer */,
 				D80CE1DB20F8BB740036297E /* Login */,
 				D80CE1D420F8B95E0036297E /* News Page */,
 				D80CE1CB20F890720036297E /* User Profile */,
@@ -246,17 +309,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277445A720F8933C004E5F2C /* QueryItemNames.swift in Sources */,
+				277445A020F89103004E5F2C /* NetworkProtocols.swift in Sources */,
+				277445A120F89103004E5F2C /* APIPaths.swift in Sources */,
 				27B616EE20E7CC0000AC52F5 /* ViewController.swift in Sources */,
 				D82509F720E9702A00989E81 /* GalleryViewController.swift in Sources */,
 				D81BE80A20F698B800E23EBF /* MessagesViewController.swift in Sources */,
 				D85929A720E9142600DBECAC /* MembersViewController.swift in Sources */,
+				277445B320F8BD84004E5F2C /* UserGlobalData.swift in Sources */,
 				D80CE1DA20F8BB640036297E /* LoginViewController.swift in Sources */,
 				D80CE1CD20F890B90036297E /* ProfileViewController.swift in Sources */,
 				D80CE1D320F8939F0036297E /* BlockedUsersCell.swift in Sources */,
 				D82509F320E966FE00989E81 /* MembersBiographyController.swift in Sources */,
 				D82509F520E96DA500989E81 /* PartnersViewController.swift in Sources */,
+				277445AB20F89542004E5F2C /* Protocols.swift in Sources */,
+				2774459F20F89103004E5F2C /* RequestController.swift in Sources */,
 				D81BE80B20F698B800E23EBF /* OwnerMessageCell.swift in Sources */,
+				277445AF20F8B86C004E5F2C /* Utilities.swift in Sources */,
 				D81BE80820F698B800E23EBF /* ChatsTableViewController.swift in Sources */,
+				277445A520F8923F004E5F2C /* LoginPostData.swift in Sources */,
+				277445AD20F8B7BE004E5F2C /* Error.swift in Sources */,
 				D80CE1D820F8B99F0036297E /* NewsCell.swift in Sources */,
 				27B616EC20E7CC0000AC52F5 /* AppDelegate.swift in Sources */,
 				D81BE80F20F6AB6A00E23EBF /* OthersMessageCell.swift in Sources */,
@@ -264,7 +336,11 @@
 				D81BE80720F698B800E23EBF /* ChatTableViewCell.swift in Sources */,
 				D80CE1D120F891A90036297E /* BlockedUsersTableViewController.swift in Sources */,
 				D81BE80920F698B800E23EBF /* Message.swift in Sources */,
+				277445B120F8BAF7004E5F2C /* User.swift in Sources */,
+				2774459E20F89103004E5F2C /* NetworkController.swift in Sources */,
 				D85929AB20E9159200DBECAC /* MembersCell.swift in Sources */,
+				277445A920F8952F004E5F2C /* Authorization.swift in Sources */,
+				277445B520F8BDCC004E5F2C /* LString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
