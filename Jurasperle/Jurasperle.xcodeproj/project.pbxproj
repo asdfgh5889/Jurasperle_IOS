@@ -12,6 +12,12 @@
 		27B616F120E7CC0000AC52F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B616EF20E7CC0000AC52F5 /* Main.storyboard */; };
 		27B616F320E7CC0200AC52F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B616F220E7CC0200AC52F5 /* Assets.xcassets */; };
 		27B616F620E7CC0200AC52F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B616F420E7CC0200AC52F5 /* LaunchScreen.storyboard */; };
+		D80CE1CD20F890B90036297E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1CC20F890B90036297E /* ProfileViewController.swift */; };
+		D80CE1D120F891A90036297E /* BlockedUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D020F891A90036297E /* BlockedUsersTableViewController.swift */; };
+		D80CE1D320F8939F0036297E /* BlockedUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D220F8939F0036297E /* BlockedUsersCell.swift */; };
+		D80CE1D620F8B98C0036297E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D520F8B98C0036297E /* NewsViewController.swift */; };
+		D80CE1D820F8B99F0036297E /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D720F8B99F0036297E /* NewsCell.swift */; };
+		D80CE1DA20F8BB640036297E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D920F8BB640036297E /* LoginViewController.swift */; };
 		D81BE80720F698B800E23EBF /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81BE80220F698B700E23EBF /* ChatTableViewCell.swift */; };
 		D81BE80820F698B800E23EBF /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81BE80320F698B700E23EBF /* ChatsTableViewController.swift */; };
 		D81BE80920F698B800E23EBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81BE80420F698B700E23EBF /* Message.swift */; };
@@ -34,6 +40,12 @@
 		27B616F220E7CC0200AC52F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27B616F520E7CC0200AC52F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27B616F720E7CC0200AC52F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D80CE1CC20F890B90036297E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D80CE1D020F891A90036297E /* BlockedUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersTableViewController.swift; sourceTree = "<group>"; };
+		D80CE1D220F8939F0036297E /* BlockedUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersCell.swift; sourceTree = "<group>"; };
+		D80CE1D520F8B98C0036297E /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		D80CE1D720F8B99F0036297E /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		D80CE1D920F8BB640036297E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D81BE80220F698B700E23EBF /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		D81BE80320F698B700E23EBF /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		D81BE80420F698B700E23EBF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -78,6 +90,9 @@
 		27B616EA20E7CC0000AC52F5 /* Jurasperle */ = {
 			isa = PBXGroup;
 			children = (
+				D80CE1DB20F8BB740036297E /* Login */,
+				D80CE1D420F8B95E0036297E /* News Page */,
+				D80CE1CB20F890720036297E /* User Profile */,
 				D82618D020F746A4005CA4E4 /* Partners */,
 				D82618CF20F74671005CA4E4 /* Memebers */,
 				D82618CE20F74655005CA4E4 /* Gallery */,
@@ -90,6 +105,33 @@
 				27B616F720E7CC0200AC52F5 /* Info.plist */,
 			);
 			path = Jurasperle;
+			sourceTree = "<group>";
+		};
+		D80CE1CB20F890720036297E /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D80CE1CC20F890B90036297E /* ProfileViewController.swift */,
+				D80CE1D020F891A90036297E /* BlockedUsersTableViewController.swift */,
+				D80CE1D220F8939F0036297E /* BlockedUsersCell.swift */,
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		D80CE1D420F8B95E0036297E /* News Page */ = {
+			isa = PBXGroup;
+			children = (
+				D80CE1D520F8B98C0036297E /* NewsViewController.swift */,
+				D80CE1D720F8B99F0036297E /* NewsCell.swift */,
+			);
+			path = "News Page";
+			sourceTree = "<group>";
+		};
+		D80CE1DB20F8BB740036297E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D80CE1D920F8BB640036297E /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D81BE80120F6989700E23EBF /* Chat */ = {
@@ -208,13 +250,19 @@
 				D82509F720E9702A00989E81 /* GalleryViewController.swift in Sources */,
 				D81BE80A20F698B800E23EBF /* MessagesViewController.swift in Sources */,
 				D85929A720E9142600DBECAC /* MembersViewController.swift in Sources */,
+				D80CE1DA20F8BB640036297E /* LoginViewController.swift in Sources */,
+				D80CE1CD20F890B90036297E /* ProfileViewController.swift in Sources */,
+				D80CE1D320F8939F0036297E /* BlockedUsersCell.swift in Sources */,
 				D82509F320E966FE00989E81 /* MembersBiographyController.swift in Sources */,
 				D82509F520E96DA500989E81 /* PartnersViewController.swift in Sources */,
 				D81BE80B20F698B800E23EBF /* OwnerMessageCell.swift in Sources */,
 				D81BE80820F698B800E23EBF /* ChatsTableViewController.swift in Sources */,
+				D80CE1D820F8B99F0036297E /* NewsCell.swift in Sources */,
 				27B616EC20E7CC0000AC52F5 /* AppDelegate.swift in Sources */,
 				D81BE80F20F6AB6A00E23EBF /* OthersMessageCell.swift in Sources */,
+				D80CE1D620F8B98C0036297E /* NewsViewController.swift in Sources */,
 				D81BE80720F698B800E23EBF /* ChatTableViewCell.swift in Sources */,
+				D80CE1D120F891A90036297E /* BlockedUsersTableViewController.swift in Sources */,
 				D81BE80920F698B800E23EBF /* Message.swift in Sources */,
 				D85929AB20E9159200DBECAC /* MembersCell.swift in Sources */,
 			);
