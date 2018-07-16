@@ -187,10 +187,7 @@
 		27B616EA20E7CC0000AC52F5 /* Jurasperle */ = {
 			isa = PBXGroup;
 			children = (
-				27D7526220FC7A2100324F54 /* Common Views */,
-				277445AE20F8B86C004E5F2C /* Utilities.swift */,
-				277445B220F8BD84004E5F2C /* UserGlobalData.swift */,
-				277445B420F8BDCC004E5F2C /* LString.swift */,
+				27D7526220FC7A2100324F54 /* Utilities */,
 				277445A220F891D7004E5F2C /* Models */,
 				2774459920F890E2004E5F2C /* Network Layer */,
 				D80CE1DB20F8BB740036297E /* Login */,
@@ -210,13 +207,16 @@
 			path = Jurasperle;
 			sourceTree = "<group>";
 		};
-		27D7526220FC7A2100324F54 /* Common Views */ = {
+		27D7526220FC7A2100324F54 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				27D7526420FC7A3400324F54 /* Controls */,
 				27D7526320FC7A2B00324F54 /* Decorations */,
+				277445AE20F8B86C004E5F2C /* Utilities.swift */,
+				277445B220F8BD84004E5F2C /* UserGlobalData.swift */,
+				277445B420F8BDCC004E5F2C /* LString.swift */,
 			);
-			path = "Common Views";
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		27D7526320FC7A2B00324F54 /* Decorations */ = {
