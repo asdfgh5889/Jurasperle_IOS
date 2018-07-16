@@ -8,14 +8,6 @@
 
 import UIKit
 
-class NetworkControllerExample: UIViewController
-{
-    @IBAction func test()
-    {
-        //NetworkController.test()
-    }
-}
-
 class NetworkController
 {
     static func getMemebers(_ postData: MembersPostData, _ completion: @escaping (Members?) -> Void)

@@ -37,6 +37,7 @@
 		27D7526920FC7A5800324F54 /* ViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526620FC7A5800324F54 /* ViewLoader.swift */; };
 		27D7526A20FC7A5800324F54 /* LoaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526720FC7A5800324F54 /* LoaderButton.swift */; };
 		27D7526C20FC7A6300324F54 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526B20FC7A6300324F54 /* RoundButton.swift */; };
+		27D7526F20FCA0B600324F54 /* ConversationRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526E20FCA0B600324F54 /* ConversationRoom.swift */; };
 		3D2B8DEEFF43CF6DF7349EF0 /* Pods_Jurasperle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB00407D65FEA1EF303CCFD /* Pods_Jurasperle.framework */; };
 		D80CE1CD20F890B90036297E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1CC20F890B90036297E /* ProfileViewController.swift */; };
 		D80CE1D120F891A90036297E /* BlockedUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D020F891A90036297E /* BlockedUsersTableViewController.swift */; };
@@ -91,6 +92,7 @@
 		27D7526620FC7A5800324F54 /* ViewLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoader.swift; sourceTree = "<group>"; };
 		27D7526720FC7A5800324F54 /* LoaderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderButton.swift; sourceTree = "<group>"; };
 		27D7526B20FC7A6300324F54 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		27D7526E20FCA0B600324F54 /* ConversationRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoom.swift; sourceTree = "<group>"; };
 		347E664D33B623D0959DD17C /* Pods-Jurasperle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.debug.xcconfig"; sourceTree = "<group>"; };
 		41983D3F0AD8CB54CBEE37A4 /* Pods-Jurasperle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.release.xcconfig"; sourceTree = "<group>"; };
 		CEB00407D65FEA1EF303CCFD /* Pods_Jurasperle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jurasperle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				27745EE020FA25A8009F8061 /* PartnersList.swift */,
 				2747E5F220FAA21B000814C7 /* GalleryItem.swift */,
 				2747E5F420FAA6D4000814C7 /* Gallery.swift */,
+				27D7526E20FCA0B600324F54 /* ConversationRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				D82509F320E966FE00989E81 /* MembersBiographyController.swift in Sources */,
 				D82509F520E96DA500989E81 /* PartnersViewController.swift in Sources */,
 				277445AB20F89542004E5F2C /* Protocols.swift in Sources */,
+				27D7526F20FCA0B600324F54 /* ConversationRoom.swift in Sources */,
 				2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */,
 				27D7526920FC7A5800324F54 /* ViewLoader.swift in Sources */,
 				2774459F20F89103004E5F2C /* RequestController.swift in Sources */,
