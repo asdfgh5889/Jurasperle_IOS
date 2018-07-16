@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LoginPostData: PostDataProtocol
+class LoginPostData: PostDataProtocol, HasQueryItems
 {
     var username: String
     var password: String
@@ -19,17 +19,17 @@ class LoginPostData: PostDataProtocol
         self.password = password
     }
     
-    func getQueryItems() -> PostDataProtocol.QueryItems?
+    func getMethod() -> HTTPMethods
+    {
+        return .post
+    }
+    
+    func getQueryItems() -> QueryItems?
     {
         return [
             URLQueryItem(name: QueryItemNames.username, value: self.username),
             URLQueryItem(name: QueryItemNames.password, value: self.password)
         ]
-    }
-    
-    func getJsonBody() -> PostDataProtocol.JsonBody?
-    {
-        return nil
     }
     
     func getPath() -> String

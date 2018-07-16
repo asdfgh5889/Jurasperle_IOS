@@ -17,4 +17,5 @@ enum Language
 class UserGlobalData
 {
     static var language: Language = .ru
+    static var auth: Authorization!
 }

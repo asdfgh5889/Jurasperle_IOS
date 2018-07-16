@@ -21,8 +21,12 @@ class RequestController
     static var baseURL = "http://jurasperle.club"
     static var baseAPIPath = "/api"
     
+    /**
+     Generates URLRequest from data provided to use api
     
-    static func generateRequest(_ postData: PostDataProtocol) -> URLRequest?
+     - parameter postData:
+     */
+    static func generateRequest<T: PostDataProtocol>(_ postData: T) -> URLRequest?
     {
         guard let url = makeURL(postData.getPath(), postData) else
         {
@@ -31,46 +35,63 @@ class RequestController
         return makeURLRequest(url, postData)
     }
     
-    static func makeURL(_ method: String , _ postData: PostDataProtocol) -> URL?
+    static func makeURL<T: PostDataProtocol>(_ method: String , _ postData: T) -> URL?
     {
         guard var urlComponents = URLComponents(string: baseURL) else
         {
             return nil
         }
         
-        urlComponents.path = "\(baseAPIPath)\(method)"
+        urlComponents.path = "\(baseAPIPath)\(method)/"
         
-        if let items = postData.getQueryItems()
+        if let pdWithQuery = postData as? HasQueryItems
         {
-            urlComponents.queryItems = [URLQueryItem]()
-            for item in items
+            if let items = pdWithQuery.getQueryItems()
             {
-                urlComponents.queryItems!.append(item)
+                urlComponents.queryItems = [URLQueryItem]()
+                for item in items
+                {
+                    urlComponents.queryItems!.append(item)
+                }
             }
         }
         
         return urlComponents.url
     }
     
-    static func makeURLRequest(_ url: URL, _ postData: PostDataProtocol) -> URLRequest
+    static func makeURLRequest<T: PostDataProtocol>(_ url: URL, _ postData: T) -> URLRequest
     {
         var request = URLRequest(url: url)
-        
         request.httpMethod = postData.getMethod().rawValue
-        if(JSONSerialization.isValidJSONObject(postData.getJsonBody() as Any))
+        
+        if let pdWithHeader = postData as? HasHeaderItems
         {
-            do
+            if let header = pdWithHeader.getHeaderItmes()
             {
-                request.httpBody = try JSONSerialization.data(withJSONObject: postData.getJsonBody()!)
+                for (key, value) in header
+                {
+                    request.addValue(value, forHTTPHeaderField: key)
+                }
             }
-            catch
+        }
+        
+        if let pdWithJsonBody = postData as? HasJsonBody
+        {
+            if(JSONSerialization.isValidJSONObject(pdWithJsonBody.getJsonBody() as Any))
+            {
+                do
+                {
+                    request.httpBody = try JSONSerialization.data(withJSONObject: pdWithJsonBody.getJsonBody()!)
+                }
+                catch
+                {
+                    print(error.localizedDescription)
+                }
+            }
+            else
             {
                 print("Invalid Json Data!")
             }
-        }
-        else
-        {
-            print("Invalid Json Data!")
         }
         
         return request

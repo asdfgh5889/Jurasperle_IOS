@@ -12,27 +12,36 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-   
     }
-
-    @IBAction func loginButtonAction(_ sender: Any) {
-        
-        if loginField.text == "1" && passwordField.text == "1"
-        {
-            print("success")
-        } else
-        {
-//            let alert = UIAlertController(title: "Ошибка", message: "Неверные данные !", preferredStyle: .alert)
-//            let action = UIAlertAction(title: "OK", style: .cancel, handler: {{ (action: UIAlertAction) in
-//                alert.dismiss(animated: true, completion: nil)
-//                }}())
-//            alert.addAction(action)
-//            self.present(alert, animated: true, completion: nil)
-            print("Failed")
+    
+    @IBAction func loginButtonAction(_ sender: Any)
+    {
+        let pd = LoginPostData(self.loginField.text ?? "", self.passwordField.text ?? "")
+        NetworkController.login(pd) { (auth: Authorization?) in
+            DispatchQueue.main.sync {
+                if auth != nil
+                {
+                    UserGlobalData.auth = auth!
+                }
+            }
         }
+//        if loginField.text == "1" && passwordField.text == "1"
+//        {
+//            print("success")
+//        } else
+//        {
+////            let alert = UIAlertController(title: "Ошибка", message: "Неверные данные !", preferredStyle: .alert)
+////            let action = UIAlertAction(title: "OK", style: .cancel, handler: {{ (action: UIAlertAction) in
+////                alert.dismiss(animated: true, completion: nil)
+////                }}())
+////            alert.addAction(action)
+////            self.present(alert, animated: true, completion: nil)
+//            print("Failed")
+//        }
     }
     
 }

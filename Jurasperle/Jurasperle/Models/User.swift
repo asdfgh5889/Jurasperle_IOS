@@ -27,11 +27,12 @@ class User: Mapable
     
     @discardableResult func mapData(fromJson json: Any) -> Bool
     {
-        guard let jsonDic = json as? [String: Any],
-            let data = jsonDic["data"] as? [String: Any] else
+        guard let jsonDic = json as? [String: Any] else
         {
             return false
         }
+        
+        var data: [String: Any] = JurasperleAPI.dataUnwrapper(json) ?? jsonDic
         
         self.id = Utilities.ToInt(from: data["id"])
         self.photoURLStr = Utilities.ToString(from: data["avatar"])

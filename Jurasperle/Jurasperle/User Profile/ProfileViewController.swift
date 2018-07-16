@@ -8,12 +8,10 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController
+{
     @IBOutlet weak var userDateOfBirth: UITextField!
-    
     @IBOutlet weak var userWorkPlace: UITextField!
-    
     @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var webPageLink: UITextField!
     @IBOutlet weak var Ampula: UITextField!
@@ -27,14 +25,25 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var passwordConfirimation: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-       
-    }
-
     @IBOutlet weak var cancelButtonAction: UIButton!
-    
     @IBOutlet weak var saveButtonAction: UIButton!
     
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        self.setupUserData()
+    }
+    
+    func setupUserData()
+    {
+        let pd = UserProfilePostData()
+        NetworkController.getUserProfile(pd) { (user: User?) in
+            DispatchQueue.main.sync {
+                if user != nil
+                {
+                    
+                }
+            }
+        }
+    }
 }

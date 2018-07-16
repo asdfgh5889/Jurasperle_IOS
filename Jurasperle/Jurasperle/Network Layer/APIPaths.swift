@@ -10,6 +10,41 @@ import Foundation
 
 class JurasperleAPI
 {
+    
+    static func dataUnwrapper(_ json: Any) -> [String: Any]?
+    {
+        guard let jsonDic = json as? [String: Any] else
+        {
+            return nil
+        }
+        
+        if let data = jsonDic["data"] as? [String: Any]
+        {
+            return data
+        }
+        else
+        {
+            return nil
+        }
+    }
+    
+    static func dataArrayUnwrapper(_ json: Any) -> [Any]?
+    {
+        guard let jsonDic = json as? [String: Any] else
+        {
+            return nil
+        }
+        
+        if let data = jsonDic["data"] as? [Any]
+        {
+            return data
+        }
+        else
+        {
+            return nil
+        }
+    }
+    
     static let login: String = "/login"
     static let members: String = "/members"
     static let gallery: String = "/gallery"

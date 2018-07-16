@@ -10,24 +10,24 @@ import Foundation
 
 protocol PostDataProtocol
 {
-    typealias QueryItems = [URLQueryItem]
-    typealias HeaderItems = [String:String?]
-    typealias JsonBody = [String: Any]
-    
-    func getQueryItems() -> QueryItems?
-    func getJsonBody() -> JsonBody?
+    func getMethod() -> HTTPMethods
     func getPath() -> String
 }
 
-extension PostDataProtocol
+protocol HasQueryItems
 {
+    typealias QueryItems = [URLQueryItem]
+    func getQueryItems() -> QueryItems?
+}
+
+protocol HasJsonBody
+{
+    typealias JsonBody = [String: Any]
+    func getJsonBody() -> JsonBody?
+}
+
+protocol HasHeaderItems
+{
+    typealias HeaderItems = [String:String]
     func getHeaderItmes() -> HeaderItems?
-    {
-        return nil
-    }
-    
-    func getMethod() -> HTTPMethods
-    {
-        return .post
-    }
 }
