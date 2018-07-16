@@ -10,6 +10,12 @@ import Foundation
 
 class ConversationRoom: Mapable
 {
+    var id: Int?
+    var title: String?
+    var logoURLStr: String?
+    var unreadMessagesCount: Int = 0
+    var lastMessageTime: String?
+    
     required init() {}
     
     @discardableResult func mapData(fromJson json: Any) -> Bool

@@ -12,6 +12,11 @@ class LString: Mapable
 {
     var enString: String?
     var ruString: String?
+    var text: String? {
+        get {
+            return UserGlobalData.language == Language.en ? self.enString: self.ruString
+        }
+    }
     
     required init() {}
     
