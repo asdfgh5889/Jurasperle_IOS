@@ -14,7 +14,7 @@ class ConversationsPostData: PostDataProtocol, HasHeaderItems
     {
         var header = [String: String]()
         header["Authorization"] = "Bearer \(UserGlobalData.auth.apiToken ?? "")"
-        print(header)
+        
         return header
     }
     

@@ -11,6 +11,7 @@
 		27422B7420FDEAF7008579A4 /* ConversationRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7320FDEAF6008579A4 /* ConversationRoom.swift */; };
 		27422B7620FDEAFD008579A4 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7520FDEAFD008579A4 /* ChatMessage.swift */; };
 		27422B7820FDF057008579A4 /* ConversationRoomPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */; };
+		27422B7A20FE03F4008579A4 /* MessagePostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7920FE03F4008579A4 /* MessagePostData.swift */; };
 		2747E5F320FAA21B000814C7 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F220FAA21B000814C7 /* GalleryItem.swift */; };
 		2747E5F520FAA6D4000814C7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F420FAA6D4000814C7 /* Gallery.swift */; };
 		2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F620FAA745000814C7 /* GalleryPostData.swift */; };
@@ -71,6 +72,7 @@
 		27422B7320FDEAF6008579A4 /* ConversationRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoom.swift; sourceTree = "<group>"; };
 		27422B7520FDEAFD008579A4 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoomPostData.swift; sourceTree = "<group>"; };
+		27422B7920FE03F4008579A4 /* MessagePostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePostData.swift; sourceTree = "<group>"; };
 		2747E5F220FAA21B000814C7 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		2747E5F420FAA6D4000814C7 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		2747E5F620FAA745000814C7 /* GalleryPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPostData.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				27D7527A20FCC31A00324F54 /* ConversationsPostData.swift */,
 				27422B6A20FDE66A008579A4 /* ConversationRoomInfoPostData.swift */,
 				27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */,
+				27422B7920FE03F4008579A4 /* MessagePostData.swift */,
 			);
 			path = PostData;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				D82509F520E96DA500989E81 /* PartnersViewController.swift in Sources */,
 				277445AB20F89542004E5F2C /* Protocols.swift in Sources */,
 				27D7526F20FCA0B600324F54 /* ConversationRoomInfo.swift in Sources */,
+				27422B7A20FE03F4008579A4 /* MessagePostData.swift in Sources */,
 				2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */,
 				27D7526920FC7A5800324F54 /* ViewLoader.swift in Sources */,
 				2774459F20F89103004E5F2C /* RequestController.swift in Sources */,

@@ -10,6 +10,12 @@ import UIKit
 
 class NetworkController
 {
+    static func sendMessage(_ postData: MessagePostData, _ completion: @escaping (ConversationRoomInfo?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
     static func getConversationRoom(_ postData: ConversationRoomPostData, _ completion: @escaping (ConversationRoom?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!
