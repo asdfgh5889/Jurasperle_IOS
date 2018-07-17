@@ -1,16 +1,16 @@
 //
-//  ConversationRoom.swift
+//  ConversationList.swift
 //  Jurasperle
 //
-//  Created by Sherzod on 7/17/18.
+//  Created by Sherzod on 7/16/18.
 //  Copyright © 2018 Humanz. All rights reserved.
 //
 
 import Foundation
 
-class ConversationRoom: Mapable
+class ConversationList: Mapable
 {
-    var messages = [ChatMessage]()
+    var conversationRooms = [ConversationRoomInfo]()
     
     required init() {}
     
@@ -21,12 +21,12 @@ class ConversationRoom: Mapable
             return false
         }
         
-        for msgJson in data
+        for convRoomJson in data
         {
-            let temp = ChatMessage()
-            if temp.mapData(fromJson: msgJson)
+            let temp = ConversationRoomInfo()
+            if temp.mapData(fromJson: convRoomJson)
             {
-                self.messages.append(temp)
+                self.conversationRooms.append(temp)
             }
         }
         
