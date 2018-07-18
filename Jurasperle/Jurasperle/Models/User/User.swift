@@ -38,12 +38,13 @@ class User: Mapable
         self.photoURLStr = Utilities.ToString(from: data["avatar"])
         self.name.mapData(fromJson: data["name"])
         self.bio.mapData(fromJson: data["bio"])
-        self.ampula.mapData(fromJson: data["ampula"])
+        self.ampula.mapData(fromJson: data["amplua"])
         self.workPlace.mapData(fromJson: data["work_place"])
         self.userId = Utilities.ToInt(from: data["user_id"])
         self.birthData = Utilities.ToString(from: data["birth_date"])
         self.sinceMemeber = Utilities.ToString(from: data["member_date"])
         self.website = Utilities.ToString(from: data["web_site"])
+        self.email = Utilities.ToString(from: data["email"])
         return true
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PartnersList: Mapable
+class PartnerList: Mapable
 {
     var partners = [Partner]()
     
