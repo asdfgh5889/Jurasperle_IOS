@@ -45,6 +45,7 @@ class JurasperleAPI
         }
     }
     
+    static let baseURL = "http://jurasperle.club"
     static let login: String = "/login"
     static let members: String = "/members"
     static let gallery: String = "/gallery"

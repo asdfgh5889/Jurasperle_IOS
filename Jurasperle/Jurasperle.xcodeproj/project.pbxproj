@@ -12,6 +12,9 @@
 		27422B7620FDEAFD008579A4 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7520FDEAFD008579A4 /* ChatMessage.swift */; };
 		27422B7820FDF057008579A4 /* ConversationRoomPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */; };
 		27422B7A20FE03F4008579A4 /* MessagePostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7920FE03F4008579A4 /* MessagePostData.swift */; };
+		27422B7D20FE253E008579A4 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7C20FE253E008579A4 /* News.swift */; };
+		27422B7F20FE2BEA008579A4 /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7E20FE2BEA008579A4 /* NewsList.swift */; };
+		27422B8120FE2C9C008579A4 /* NewsPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B8020FE2C9C008579A4 /* NewsPostData.swift */; };
 		2747E5F320FAA21B000814C7 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F220FAA21B000814C7 /* GalleryItem.swift */; };
 		2747E5F520FAA6D4000814C7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F420FAA6D4000814C7 /* Gallery.swift */; };
 		2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F620FAA745000814C7 /* GalleryPostData.swift */; };
@@ -73,6 +76,9 @@
 		27422B7520FDEAFD008579A4 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoomPostData.swift; sourceTree = "<group>"; };
 		27422B7920FE03F4008579A4 /* MessagePostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePostData.swift; sourceTree = "<group>"; };
+		27422B7C20FE253E008579A4 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		27422B7E20FE2BEA008579A4 /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
+		27422B8020FE2C9C008579A4 /* NewsPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostData.swift; sourceTree = "<group>"; };
 		2747E5F220FAA21B000814C7 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		2747E5F420FAA6D4000814C7 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		2747E5F620FAA745000814C7 /* GalleryPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPostData.swift; sourceTree = "<group>"; };
@@ -206,6 +212,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		27422B7B20FE2522008579A4 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				27422B7C20FE253E008579A4 /* News.swift */,
+				27422B7E20FE2BEA008579A4 /* NewsList.swift */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		2774459920F890E2004E5F2C /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +235,7 @@
 		277445A220F891D7004E5F2C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27422B7B20FE2522008579A4 /* News */,
 				27422B7220FDEA01008579A4 /* Protocols */,
 				27422B7120FDE9FA008579A4 /* Errors */,
 				27422B7020FDE9E3008579A4 /* Authorization */,
@@ -244,6 +260,7 @@
 				27422B6A20FDE66A008579A4 /* ConversationRoomInfoPostData.swift */,
 				27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */,
 				27422B7920FE03F4008579A4 /* MessagePostData.swift */,
+				27422B8020FE2C9C008579A4 /* NewsPostData.swift */,
 			);
 			path = PostData;
 			sourceTree = "<group>";
@@ -273,12 +290,12 @@
 				277445A220F891D7004E5F2C /* Models */,
 				2774459920F890E2004E5F2C /* Network Layer */,
 				D80CE1DB20F8BB740036297E /* Login */,
-				D80CE1D420F8B95E0036297E /* News Page */,
 				D80CE1CB20F890720036297E /* User Profile */,
 				D82618D020F746A4005CA4E4 /* Partners */,
 				D82618CF20F74671005CA4E4 /* Memebers */,
 				D82618CE20F74655005CA4E4 /* Gallery */,
 				D81BE80120F6989700E23EBF /* Chat */,
+				D80CE1D420F8B95E0036297E /* News Page */,
 				27B616EB20E7CC0000AC52F5 /* AppDelegate.swift */,
 				27B616ED20E7CC0000AC52F5 /* ViewController.swift */,
 				27B616EF20E7CC0000AC52F5 /* Main.storyboard */,
@@ -543,6 +560,8 @@
 				2774459F20F89103004E5F2C /* RequestController.swift in Sources */,
 				D81BE80B20F698B800E23EBF /* OwnerMessageCell.swift in Sources */,
 				27422B7420FDEAF7008579A4 /* ConversationRoom.swift in Sources */,
+				27422B8120FE2C9C008579A4 /* NewsPostData.swift in Sources */,
+				27422B7F20FE2BEA008579A4 /* NewsList.swift in Sources */,
 				27D7527720FCC0CD00324F54 /* Extensions.swift in Sources */,
 				27422B6B20FDE66A008579A4 /* ConversationRoomInfoPostData.swift in Sources */,
 				277445AF20F8B86C004E5F2C /* Utilities.swift in Sources */,
@@ -565,6 +584,7 @@
 				277445B120F8BAF7004E5F2C /* User.swift in Sources */,
 				27D7527920FCC24F00324F54 /* ConversationList.swift in Sources */,
 				2774459E20F89103004E5F2C /* NetworkController.swift in Sources */,
+				27422B7D20FE253E008579A4 /* News.swift in Sources */,
 				2747E5F320FAA21B000814C7 /* GalleryItem.swift in Sources */,
 				D85929AB20E9159200DBECAC /* MembersCell.swift in Sources */,
 				27422B7820FDF057008579A4 /* ConversationRoomPostData.swift in Sources */,

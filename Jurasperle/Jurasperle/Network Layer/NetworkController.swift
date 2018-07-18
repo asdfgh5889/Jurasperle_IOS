@@ -10,6 +10,12 @@ import UIKit
 
 class NetworkController
 {
+    static func getNews(_ postData: NewsPostData, _ completion: @escaping (NewsList?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
     static func sendMessage(_ postData: MessagePostData, _ completion: @escaping (ConversationRoomInfo?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!
