@@ -1,18 +1,18 @@
 //
-//  UserProfilePostData.swift
+//  NewsPostData.swift
 //  Jurasperle
 //
-//  Created by Sherzod on 7/13/18.
+//  Created by Sherzod on 7/17/18.
 //  Copyright © 2018 Humanz. All rights reserved.
 //
 
 import Foundation
 
-class UserProfilePostData: PostDataProtocol, HasHeaderItems
+class NewsPostData: PostDataProtocol, HasHeaderItems
 {
     func getPath() -> String
     {
-        return JurasperleAPI.profile
+        return JurasperleAPI.news
     }
     
     func getMethod() -> HTTPMethods

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import Kingfisher
 
 class Authorization: Mapable
 {
@@ -22,7 +24,7 @@ class Authorization: Mapable
         guard let jsonDic = json as? [String: Any] else {
             return false
         }
-        
+
         self.error.mapData(fromJson: json)
         
         

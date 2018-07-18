@@ -1,14 +1,14 @@
 //
-//  MembersPostData.swift
+//  ConversationsPostData.swift
 //  Jurasperle
 //
-//  Created by Sherzod on 7/13/18.
+//  Created by Sherzod on 7/16/18.
 //  Copyright © 2018 Humanz. All rights reserved.
 //
 
 import Foundation
 
-class MembersPostData: PostDataProtocol, HasHeaderItems
+class ConversationsPostData: PostDataProtocol, HasHeaderItems
 {
     func getHeaderItmes() -> HeaderItems?
     {
@@ -25,6 +25,6 @@ class MembersPostData: PostDataProtocol, HasHeaderItems
     
     func getPath() -> String
     {
-        return JurasperleAPI.members
-    } 
+        return JurasperleAPI.conversations
+    }
 }

@@ -1,20 +1,26 @@
 //
-//  MembersPostData.swift
+//  ConversationRoomPostData.swift
 //  Jurasperle
 //
-//  Created by Sherzod on 7/13/18.
+//  Created by Sherzod on 7/17/18.
 //  Copyright © 2018 Humanz. All rights reserved.
 //
 
 import Foundation
 
-class MembersPostData: PostDataProtocol, HasHeaderItems
+class ConversationRoomPostData: PostDataProtocol, HasHeaderItems
 {
+    var conversationId: Int
+    
+    init(_ conversationId: Int)
+    {
+        self.conversationId = conversationId
+    }
+    
     func getHeaderItmes() -> HeaderItems?
     {
         var header = [String: String]()
         header["Authorization"] = "Bearer \(UserGlobalData.auth.apiToken ?? "")"
-        
         return header
     }
     
@@ -25,6 +31,6 @@ class MembersPostData: PostDataProtocol, HasHeaderItems
     
     func getPath() -> String
     {
-        return JurasperleAPI.members
-    } 
+        return "\(JurasperleAPI.messages)/\(self.conversationId)"
+    }
 }

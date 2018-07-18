@@ -10,6 +10,36 @@ import UIKit
 
 class NetworkController
 {
+    static func getNews(_ postData: NewsPostData, _ completion: @escaping (NewsList?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
+    static func sendMessage(_ postData: MessagePostData, _ completion: @escaping (ConversationRoomInfo?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
+    static func getConversationRoom(_ postData: ConversationRoomPostData, _ completion: @escaping (ConversationRoom?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
+    static func getConversationRoomInfo(_ postData: ConversationRoomInfoPostData, _ completion: @escaping (ConversationRoomInfo?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
+    static func getConversationList(_ postData: ConversationsPostData, _ completion: @escaping (ConversationList?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
     static func getMemebers(_ postData: MembersPostData, _ completion: @escaping (Members?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!

@@ -1,5 +1,5 @@
 //
-//  ConversationRoom.swift
+//  NewsList.swift
 //  Jurasperle
 //
 //  Created by Sherzod on 7/17/18.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class ConversationRoom: Mapable
+class NewsList: Mapable
 {
-    var messages = [ChatMessage]()
+    var news = [News]()
     
     required init() {}
     
@@ -21,12 +21,12 @@ class ConversationRoom: Mapable
             return false
         }
         
-        for msgJson in data
+        for newsJson in data
         {
-            let temp = ChatMessage()
-            if temp.mapData(fromJson: msgJson)
+            let temp = News()
+            if temp.mapData(fromJson: newsJson)
             {
-                self.messages.append(temp)
+                self.news.append(temp)
             }
         }
         

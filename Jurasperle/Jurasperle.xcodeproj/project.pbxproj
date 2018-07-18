@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27422B6B20FDE66A008579A4 /* ConversationRoomInfoPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B6A20FDE66A008579A4 /* ConversationRoomInfoPostData.swift */; };
+		27422B7420FDEAF7008579A4 /* ConversationRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7320FDEAF6008579A4 /* ConversationRoom.swift */; };
+		27422B7620FDEAFD008579A4 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7520FDEAFD008579A4 /* ChatMessage.swift */; };
+		27422B7820FDF057008579A4 /* ConversationRoomPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */; };
+		27422B7A20FE03F4008579A4 /* MessagePostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7920FE03F4008579A4 /* MessagePostData.swift */; };
+		27422B7D20FE253E008579A4 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7C20FE253E008579A4 /* News.swift */; };
+		27422B7F20FE2BEA008579A4 /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7E20FE2BEA008579A4 /* NewsList.swift */; };
+		27422B8120FE2C9C008579A4 /* NewsPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B8020FE2C9C008579A4 /* NewsPostData.swift */; };
 		2747E5F320FAA21B000814C7 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F220FAA21B000814C7 /* GalleryItem.swift */; };
 		2747E5F520FAA6D4000814C7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F420FAA6D4000814C7 /* Gallery.swift */; };
 		2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F620FAA745000814C7 /* GalleryPostData.swift */; };
@@ -37,8 +45,11 @@
 		27D7526920FC7A5800324F54 /* ViewLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526620FC7A5800324F54 /* ViewLoader.swift */; };
 		27D7526A20FC7A5800324F54 /* LoaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526720FC7A5800324F54 /* LoaderButton.swift */; };
 		27D7526C20FC7A6300324F54 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526B20FC7A6300324F54 /* RoundButton.swift */; };
-		27D7526F20FCA0B600324F54 /* ConversationRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526E20FCA0B600324F54 /* ConversationRoom.swift */; };
-		B7BD19D7C3B18A1593E64372 /* Pods_Jurasperle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34753847BD481C264F01AE48 /* Pods_Jurasperle.framework */; };
+		27D7526F20FCA0B600324F54 /* ConversationRoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7526E20FCA0B600324F54 /* ConversationRoomInfo.swift */; };
+		27D7527720FCC0CD00324F54 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7527620FCC0CD00324F54 /* Extensions.swift */; };
+		27D7527920FCC24F00324F54 /* ConversationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7527820FCC24F00324F54 /* ConversationList.swift */; };
+		27D7527B20FCC31A00324F54 /* ConversationsPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7527A20FCC31A00324F54 /* ConversationsPostData.swift */; };
+		3D2B8DEEFF43CF6DF7349EF0 /* Pods_Jurasperle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB00407D65FEA1EF303CCFD /* Pods_Jurasperle.framework */; };
 		D80CE1CD20F890B90036297E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1CC20F890B90036297E /* ProfileViewController.swift */; };
 		D80CE1D120F891A90036297E /* BlockedUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D020F891A90036297E /* BlockedUsersTableViewController.swift */; };
 		D80CE1D320F8939F0036297E /* BlockedUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D220F8939F0036297E /* BlockedUsersCell.swift */; };
@@ -60,7 +71,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1A0EBD96FB9C1F71DEDDACC1 /* Pods-Jurasperle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.release.xcconfig"; sourceTree = "<group>"; };
+		27422B6A20FDE66A008579A4 /* ConversationRoomInfoPostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRoomInfoPostData.swift; sourceTree = "<group>"; };
+		27422B7320FDEAF6008579A4 /* ConversationRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoom.swift; sourceTree = "<group>"; };
+		27422B7520FDEAFD008579A4 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoomPostData.swift; sourceTree = "<group>"; };
+		27422B7920FE03F4008579A4 /* MessagePostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePostData.swift; sourceTree = "<group>"; };
+		27422B7C20FE253E008579A4 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		27422B7E20FE2BEA008579A4 /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
+		27422B8020FE2C9C008579A4 /* NewsPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPostData.swift; sourceTree = "<group>"; };
 		2747E5F220FAA21B000814C7 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		2747E5F420FAA6D4000814C7 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		2747E5F620FAA745000814C7 /* GalleryPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPostData.swift; sourceTree = "<group>"; };
@@ -93,9 +111,13 @@
 		27D7526620FC7A5800324F54 /* ViewLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoader.swift; sourceTree = "<group>"; };
 		27D7526720FC7A5800324F54 /* LoaderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderButton.swift; sourceTree = "<group>"; };
 		27D7526B20FC7A6300324F54 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		27D7526E20FCA0B600324F54 /* ConversationRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoom.swift; sourceTree = "<group>"; };
-		34753847BD481C264F01AE48 /* Pods_Jurasperle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jurasperle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59CCAF9B94A9F2EE1253EF16 /* Pods-Jurasperle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.debug.xcconfig"; sourceTree = "<group>"; };
+		27D7526E20FCA0B600324F54 /* ConversationRoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoomInfo.swift; sourceTree = "<group>"; };
+		27D7527620FCC0CD00324F54 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		27D7527820FCC24F00324F54 /* ConversationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationList.swift; sourceTree = "<group>"; };
+		27D7527A20FCC31A00324F54 /* ConversationsPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsPostData.swift; sourceTree = "<group>"; };
+		347E664D33B623D0959DD17C /* Pods-Jurasperle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.debug.xcconfig"; sourceTree = "<group>"; };
+		41983D3F0AD8CB54CBEE37A4 /* Pods-Jurasperle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.release.xcconfig"; sourceTree = "<group>"; };
+		CEB00407D65FEA1EF303CCFD /* Pods_Jurasperle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jurasperle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80CE1CC20F890B90036297E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D80CE1D020F891A90036297E /* BlockedUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersTableViewController.swift; sourceTree = "<group>"; };
 		D80CE1D220F8939F0036297E /* BlockedUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersCell.swift; sourceTree = "<group>"; };
@@ -128,6 +150,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27422B6C20FDE99D008579A4 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				27D7526E20FCA0B600324F54 /* ConversationRoomInfo.swift */,
+				27D7527820FCC24F00324F54 /* ConversationList.swift */,
+				27422B7320FDEAF6008579A4 /* ConversationRoom.swift */,
+				27422B7520FDEAFD008579A4 /* ChatMessage.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		27422B6D20FDE9B6008579A4 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				2747E5F220FAA21B000814C7 /* GalleryItem.swift */,
+				2747E5F420FAA6D4000814C7 /* Gallery.swift */,
+			);
+			name = Gallery;
+			sourceTree = "<group>";
+		};
+		27422B6E20FDE9C2008579A4 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				277445B020F8BAF7004E5F2C /* User.swift */,
+				277445BA20F8EC63004E5F2C /* Members.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		27422B6F20FDE9D4008579A4 /* Partners */ = {
+			isa = PBXGroup;
+			children = (
+				27745EDE20FA10A8009F8061 /* Partner.swift */,
+				27745EE020FA25A8009F8061 /* PartnersList.swift */,
+			);
+			name = Partners;
+			sourceTree = "<group>";
+		};
+		27422B7020FDE9E3008579A4 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				277445A820F8952F004E5F2C /* Authorization.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		27422B7120FDE9FA008579A4 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				277445AC20F8B7BE004E5F2C /* Error.swift */,
+			);
+			name = Errors;
+			sourceTree = "<group>";
+		};
+		27422B7220FDEA01008579A4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				277445AA20F89542004E5F2C /* Protocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		27422B7B20FE2522008579A4 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				27422B7C20FE253E008579A4 /* News.swift */,
+				27422B7E20FE2BEA008579A4 /* NewsList.swift */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		2774459920F890E2004E5F2C /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,17 +235,15 @@
 		277445A220F891D7004E5F2C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				27422B7B20FE2522008579A4 /* News */,
+				27422B7220FDEA01008579A4 /* Protocols */,
+				27422B7120FDE9FA008579A4 /* Errors */,
+				27422B7020FDE9E3008579A4 /* Authorization */,
+				27422B6F20FDE9D4008579A4 /* Partners */,
+				27422B6E20FDE9C2008579A4 /* User */,
+				27422B6D20FDE9B6008579A4 /* Gallery */,
+				27422B6C20FDE99D008579A4 /* Chat */,
 				277445A320F891EB004E5F2C /* PostData */,
-				277445A820F8952F004E5F2C /* Authorization.swift */,
-				277445AA20F89542004E5F2C /* Protocols.swift */,
-				277445AC20F8B7BE004E5F2C /* Error.swift */,
-				277445B020F8BAF7004E5F2C /* User.swift */,
-				277445BA20F8EC63004E5F2C /* Members.swift */,
-				27745EDE20FA10A8009F8061 /* Partner.swift */,
-				27745EE020FA25A8009F8061 /* PartnersList.swift */,
-				2747E5F220FAA21B000814C7 /* GalleryItem.swift */,
-				2747E5F420FAA6D4000814C7 /* Gallery.swift */,
-				27D7526E20FCA0B600324F54 /* ConversationRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +256,11 @@
 				277445B620F8D757004E5F2C /* UserProfilePostData.swift */,
 				277445B820F8EA1A004E5F2C /* MembersPostData.swift */,
 				2747E5F620FAA745000814C7 /* GalleryPostData.swift */,
+				27D7527A20FCC31A00324F54 /* ConversationsPostData.swift */,
+				27422B6A20FDE66A008579A4 /* ConversationRoomInfoPostData.swift */,
+				27422B7720FDF057008579A4 /* ConversationRoomPostData.swift */,
+				27422B7920FE03F4008579A4 /* MessagePostData.swift */,
+				27422B8020FE2C9C008579A4 /* NewsPostData.swift */,
 			);
 			path = PostData;
 			sourceTree = "<group>";
@@ -194,12 +290,12 @@
 				277445A220F891D7004E5F2C /* Models */,
 				2774459920F890E2004E5F2C /* Network Layer */,
 				D80CE1DB20F8BB740036297E /* Login */,
-				D80CE1D420F8B95E0036297E /* News Page */,
 				D80CE1CB20F890720036297E /* User Profile */,
 				D82618D020F746A4005CA4E4 /* Partners */,
 				D82618CF20F74671005CA4E4 /* Memebers */,
 				D82618CE20F74655005CA4E4 /* Gallery */,
 				D81BE80120F6989700E23EBF /* Chat */,
+				D80CE1D420F8B95E0036297E /* News Page */,
 				27B616EB20E7CC0000AC52F5 /* AppDelegate.swift */,
 				27B616ED20E7CC0000AC52F5 /* ViewController.swift */,
 				27B616EF20E7CC0000AC52F5 /* Main.storyboard */,
@@ -218,6 +314,7 @@
 				277445AE20F8B86C004E5F2C /* Utilities.swift */,
 				277445B220F8BD84004E5F2C /* UserGlobalData.swift */,
 				277445B420F8BDCC004E5F2C /* LString.swift */,
+				27D7527620FCC0CD00324F54 /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -440,6 +537,7 @@
 				277445A720F8933C004E5F2C /* QueryItemNames.swift in Sources */,
 				277445B720F8D757004E5F2C /* UserProfilePostData.swift in Sources */,
 				277445A020F89103004E5F2C /* NetworkProtocols.swift in Sources */,
+				27422B7620FDEAFD008579A4 /* ChatMessage.swift in Sources */,
 				277445A120F89103004E5F2C /* APIPaths.swift in Sources */,
 				27D7526C20FC7A6300324F54 /* RoundButton.swift in Sources */,
 				27B616EE20E7CC0000AC52F5 /* ViewController.swift in Sources */,
@@ -455,11 +553,17 @@
 				D82509F320E966FE00989E81 /* MembersBiographyController.swift in Sources */,
 				D82509F520E96DA500989E81 /* PartnersViewController.swift in Sources */,
 				277445AB20F89542004E5F2C /* Protocols.swift in Sources */,
-				27D7526F20FCA0B600324F54 /* ConversationRoom.swift in Sources */,
+				27D7526F20FCA0B600324F54 /* ConversationRoomInfo.swift in Sources */,
+				27422B7A20FE03F4008579A4 /* MessagePostData.swift in Sources */,
 				2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */,
 				27D7526920FC7A5800324F54 /* ViewLoader.swift in Sources */,
 				2774459F20F89103004E5F2C /* RequestController.swift in Sources */,
 				D81BE80B20F698B800E23EBF /* OwnerMessageCell.swift in Sources */,
+				27422B7420FDEAF7008579A4 /* ConversationRoom.swift in Sources */,
+				27422B8120FE2C9C008579A4 /* NewsPostData.swift in Sources */,
+				27422B7F20FE2BEA008579A4 /* NewsList.swift in Sources */,
+				27D7527720FCC0CD00324F54 /* Extensions.swift in Sources */,
+				27422B6B20FDE66A008579A4 /* ConversationRoomInfoPostData.swift in Sources */,
 				277445AF20F8B86C004E5F2C /* Utilities.swift in Sources */,
 				D81BE80820F698B800E23EBF /* ChatsTableViewController.swift in Sources */,
 				27745EE120FA25A8009F8061 /* PartnersList.swift in Sources */,
@@ -472,14 +576,18 @@
 				D80CE1D620F8B98C0036297E /* NewsViewController.swift in Sources */,
 				2747E5F520FAA6D4000814C7 /* Gallery.swift in Sources */,
 				277445B920F8EA1A004E5F2C /* MembersPostData.swift in Sources */,
+				27D7527B20FCC31A00324F54 /* ConversationsPostData.swift in Sources */,
 				27D7526820FC7A5800324F54 /* WinLoader.swift in Sources */,
 				D81BE80720F698B800E23EBF /* ChatTableViewCell.swift in Sources */,
 				D80CE1D120F891A90036297E /* BlockedUsersTableViewController.swift in Sources */,
 				D81BE80920F698B800E23EBF /* Message.swift in Sources */,
 				277445B120F8BAF7004E5F2C /* User.swift in Sources */,
+				27D7527920FCC24F00324F54 /* ConversationList.swift in Sources */,
 				2774459E20F89103004E5F2C /* NetworkController.swift in Sources */,
+				27422B7D20FE253E008579A4 /* News.swift in Sources */,
 				2747E5F320FAA21B000814C7 /* GalleryItem.swift in Sources */,
 				D85929AB20E9159200DBECAC /* MembersCell.swift in Sources */,
+				27422B7820FDF057008579A4 /* ConversationRoomPostData.swift in Sources */,
 				277445A920F8952F004E5F2C /* Authorization.swift in Sources */,
 				277445B520F8BDCC004E5F2C /* LString.swift in Sources */,
 			);
