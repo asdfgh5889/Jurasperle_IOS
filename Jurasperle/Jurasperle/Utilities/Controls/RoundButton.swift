@@ -58,32 +58,3 @@ class RoundButton: UIButton
         })
     }
 }
-
-class CallButton: RoundButton
-{
-    override init()
-    {
-        super.init()
-        self.backgroundColor = UIColor.rgb(red: 147, green: 203, blue: 114)
-        self.setImage(UIImage(named:"phone-receiver.png"), for: .normal)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-}
-
-class FilterButton: RoundButton
-{
-    override init()
-    {
-        super.init()
-        self.backgroundColor = MainColors.mainColor
-        self.setImage(UIImage(named:"filter-icon"), for: .normal)
-        self.imageView?.tintColor = .white
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-}

@@ -12,9 +12,11 @@ class ProfileViewController: UIViewController
 {
     @IBOutlet weak var userDateOfBirth: UITextField!
     @IBOutlet weak var userWorkPlace: UITextField!
-    @IBOutlet weak var userEmail: UILabel!
     @IBOutlet weak var webPageLink: UITextField!
     @IBOutlet weak var Ampula: UITextField!
+    
+    @IBOutlet weak var userEmail: UITextField!
+    
     @IBOutlet weak var userBiography: UITextView!
     @IBOutlet weak var userPhotoGalleryCollection: UICollectionView!
     @IBOutlet weak var userGalleryImageCell: UIImageView!
@@ -27,11 +29,15 @@ class ProfileViewController: UIViewController
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var cancelButtonAction: UIButton!
     @IBOutlet weak var saveButtonAction: UIButton!
+    var blokedUsers = BlockedUsersTableViewController()
+    @IBOutlet var blokedUsersTable: UITableView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.setupUserData()
+        
+    
     }
     
     func setupUserData()
@@ -41,9 +47,22 @@ class ProfileViewController: UIViewController
             DispatchQueue.main.sync {
                 if user != nil
                 {
-                    
+                    self.userDateOfBirth.text = user?.birthData
+                    self.userWorkPlace.text = user?.workPlace.ruString
+                    self.webPageLink.text = user?.website
+                    self.Ampula.text = user?.ampula.ruString
+                    if user?.bio.ruString != nil
+                    {
+                        self.userBiography.text = user?.bio.ruString
+                    }
+                    self.userEmail.text = user?.email
+                    self.blokedUsersTable.delegate = self.blokedUsers
+                    self.blokedUsersTable.dataSource = self.blokedUsers
+                
                 }
             }
         }
-    }
+     }
+    
+    
 }

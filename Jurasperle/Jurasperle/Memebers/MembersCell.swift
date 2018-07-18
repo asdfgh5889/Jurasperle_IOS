@@ -17,6 +17,7 @@ class MembersCell: UITableViewCell {
     @IBOutlet weak var memberImageCell: UIImageView!
     @IBOutlet weak var memberNameLable: UILabel!
    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         memberImageCell.layer.borderWidth = 1
@@ -32,7 +33,7 @@ class MembersCell: UITableViewCell {
         sendMessage.layer.borderColor = UIColor.gray.cgColor
         moreInfo.layer.borderWidth = 1
         moreInfo.layer.borderColor = UIColor.gray.cgColor
-       // moreInfo.imageEdgeInsets(top: 5, left: (bounds.width - 35), bottom: 5, right: 5)
+      
     }
     
    
@@ -47,12 +48,6 @@ class MembersCell: UITableViewCell {
             }
         }
     }
-//    view rawButtonWithImage.swift hosted with ❤ by GitHub
-//
-//    override func setSelected(_ selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
+
    
 }
