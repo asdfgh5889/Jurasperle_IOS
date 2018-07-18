@@ -7,15 +7,52 @@
 //
 
 import UIKit
+import Kingfisher
 class MembersBiographyController: UIViewController {
-   @IBOutlet weak var ImageCell: UIImageView!
+    @IBOutlet weak var ImageCell: UIImageView!
+    @IBOutlet weak var memberName: UILabel!
+    @IBOutlet weak var memberDateOfBirth: UILabel!
+    @IBOutlet weak var memberWorkPlace: UILabel!
+    @IBOutlet weak var memberWebPage: UILabel!
+    @IBOutlet weak var memberAmpula: UILabel!
+    @IBOutlet weak var memberEmail: UILabel!
+    @IBOutlet weak var memberBio: UITextView!
+    var user: User!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setViewElements()
+        setMemberData()
+    }
+    
+    func setMemberData()
+    {
+        
+        ImageCell.kf.setImage(with: URL(string: user.photoURLStr!))
+        memberName.text = user.name.ruString
+        memberWorkPlace.text = user.workPlace.ruString
+        
+        memberAmpula.text += user.ampula
+       
+        if user.bio.ruString != nil
+        {
+            memberBio.text = user.bio.ruString
+        }
+        else
+        {
+            memberBio.text = "Этот участник не добавил автобиографию"
+        }
+        
+        memberDateOfBirth.text = user.birthData
+        memberWebPage.text = user.website
+        memberEmail.text = user.email
+        
     }
     
     func  setViewElements()
     {
         ImageCell.layer.cornerRadius = ImageCell.frame.height/2
+        ImageCell.clipsToBounds = true
     }
 }

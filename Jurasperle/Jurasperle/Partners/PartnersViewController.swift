@@ -10,6 +10,18 @@ import UIKit
 
 class PartnersViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
     
+    var partner = Partner()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setUpPartnerData()
+        
+    }
+    
+    func setUpPartnerData()
+    {
+      
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
@@ -17,17 +29,7 @@ class PartnersViewController: UIViewController,UICollectionViewDelegate,UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "partnerCell", for: indexPath)
-       
+        
         return cell
     }
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
- 
-
 }

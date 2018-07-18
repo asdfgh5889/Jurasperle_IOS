@@ -12,11 +12,14 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    var goToHomePage: Bool = true
+    var viewControllerOnBack: UIViewController?
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
     }
+    
     
     @IBAction func loginButtonAction(_ sender: Any)
     {
@@ -25,23 +28,36 @@ class LoginViewController: UIViewController {
             DispatchQueue.main.sync {
                 if auth != nil
                 {
-                    UserGlobalData.auth = auth!
+                    if JurasError.init().errorCode == 0
+                    {
+                        UserGlobalData.auth = auth
+                        self.performSegue(withIdentifier: "goMainView", sender: self)
+                    }
+                    else
+                    {
+                        self.onFailure()
+                    }
+                }
+                else
+                {
+                    self.onFailure()
                 }
             }
         }
-//        if loginField.text == "1" && passwordField.text == "1"
-//        {
-//            print("success")
-//        } else
-//        {
-////            let alert = UIAlertController(title: "Ошибка", message: "Неверные данные !", preferredStyle: .alert)
-////            let action = UIAlertAction(title: "OK", style: .cancel, handler: {{ (action: UIAlertAction) in
-////                alert.dismiss(animated: true, completion: nil)
-////                }}())
-////            alert.addAction(action)
-////            self.present(alert, animated: true, completion: nil)
-//            print("Failed")
-//        }
+        
+      
+        
+    }
+  
+
+    private func onFailure() -> Void
+    {
+        let alert = UIAlertController(title: "Неверные данные", message: "Не верный логин или пароль", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: {{ (action: UIAlertAction) in
+            alert.dismiss(animated: true, completion: nil)
+            }}())
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
