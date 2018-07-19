@@ -39,7 +39,7 @@ class LString: Mapable, JsonDecodable
         return true
     }
     
-    @discardableResult func getJsonData() -> Any
+    @discardableResult func getJsonData() -> [String: Any]
     {
         var jsonObject = [String: Any]()
         

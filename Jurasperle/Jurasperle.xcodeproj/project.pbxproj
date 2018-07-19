@@ -21,9 +21,6 @@
 		2745DF6221009AC100E3ECCB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF6121009AC100E3ECCB /* Contact.swift */; };
 		2745DF6421009D7A00E3ECCB /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF6321009D7A00E3ECCB /* ContactList.swift */; };
 		2745DF662100C09900E3ECCB /* GetContactsPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF652100C09900E3ECCB /* GetContactsPostData.swift */; };
-		2745DF682100D00E00E3ECCB /* GetBlockedIds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF672100D00E00E3ECCB /* GetBlockedIds.swift */; };
-		2745DF6A2100D17E00E3ECCB /* BlockedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF692100D17E00E3ECCB /* BlockedUsers.swift */; };
-		2745DF6C2100D69600E3ECCB /* SetBlockedUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF6B2100D69600E3ECCB /* SetBlockedUsers.swift */; };
 		2747E5F320FAA21B000814C7 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F220FAA21B000814C7 /* GalleryItem.swift */; };
 		2747E5F520FAA6D4000814C7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F420FAA6D4000814C7 /* Gallery.swift */; };
 		2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F620FAA745000814C7 /* GalleryPostData.swift */; };
@@ -95,9 +92,6 @@
 		2745DF6121009AC100E3ECCB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2745DF6321009D7A00E3ECCB /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
 		2745DF652100C09900E3ECCB /* GetContactsPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContactsPostData.swift; sourceTree = "<group>"; };
-		2745DF672100D00E00E3ECCB /* GetBlockedIds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBlockedIds.swift; sourceTree = "<group>"; };
-		2745DF692100D17E00E3ECCB /* BlockedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsers.swift; sourceTree = "<group>"; };
-		2745DF6B2100D69600E3ECCB /* SetBlockedUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBlockedUsers.swift; sourceTree = "<group>"; };
 		2747E5F220FAA21B000814C7 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		2747E5F420FAA6D4000814C7 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		2747E5F620FAA745000814C7 /* GalleryPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPostData.swift; sourceTree = "<group>"; };
@@ -195,7 +189,6 @@
 				277445BA20F8EC63004E5F2C /* Members.swift */,
 				2745DF6121009AC100E3ECCB /* Contact.swift */,
 				2745DF6321009D7A00E3ECCB /* ContactList.swift */,
-				2745DF692100D17E00E3ECCB /* BlockedUsers.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -286,8 +279,6 @@
 				2745DF5D21008F2A00E3ECCB /* ChangeUserProdilePostData.swift */,
 				2745DF5F2100904A00E3ECCB /* AuthorizationPostData.swift */,
 				2745DF652100C09900E3ECCB /* GetContactsPostData.swift */,
-				2745DF672100D00E00E3ECCB /* GetBlockedIds.swift */,
-				2745DF6B2100D69600E3ECCB /* SetBlockedUsers.swift */,
 			);
 			path = PostData;
 			sourceTree = "<group>";
@@ -573,7 +564,6 @@
 				D81BE80A20F698B800E23EBF /* MessagesViewController.swift in Sources */,
 				D85929A720E9142600DBECAC /* MembersViewController.swift in Sources */,
 				27745EDF20FA10A8009F8061 /* Partner.swift in Sources */,
-				2745DF682100D00E00E3ECCB /* GetBlockedIds.swift in Sources */,
 				2745DF6221009AC100E3ECCB /* Contact.swift in Sources */,
 				277445B320F8BD84004E5F2C /* UserGlobalData.swift in Sources */,
 				2745DF6421009D7A00E3ECCB /* ContactList.swift in Sources */,
@@ -588,7 +578,6 @@
 				2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */,
 				2745DF5E21008F2A00E3ECCB /* ChangeUserProdilePostData.swift in Sources */,
 				27D7526920FC7A5800324F54 /* ViewLoader.swift in Sources */,
-				2745DF6C2100D69600E3ECCB /* SetBlockedUsers.swift in Sources */,
 				2774459F20F89103004E5F2C /* RequestController.swift in Sources */,
 				D81BE80B20F698B800E23EBF /* OwnerMessageCell.swift in Sources */,
 				27422B7420FDEAF7008579A4 /* ConversationRoom.swift in Sources */,
@@ -613,7 +602,6 @@
 				27D7526820FC7A5800324F54 /* WinLoader.swift in Sources */,
 				D81BE80720F698B800E23EBF /* ChatTableViewCell.swift in Sources */,
 				2745DF662100C09900E3ECCB /* GetContactsPostData.swift in Sources */,
-				2745DF6A2100D17E00E3ECCB /* BlockedUsers.swift in Sources */,
 				D80CE1D120F891A90036297E /* BlockedUsersTableViewController.swift in Sources */,
 				D81BE80920F698B800E23EBF /* Message.swift in Sources */,
 				277445B120F8BAF7004E5F2C /* User.swift in Sources */,

@@ -10,12 +10,6 @@ import UIKit
 
 class NetworkController
 {
-    static func setBlockedUsers(_ postData: SetBlockedUsersPostData, _ completion: @escaping (BlockedUsers?) -> Void)
-    {
-        let request = RequestController.generateRequest(postData)!
-        fetchRawData(request, completion)
-    }
-    
     static func getContacts(_ postData: GetContactsPostData, _ completion: @escaping (ContactList?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!

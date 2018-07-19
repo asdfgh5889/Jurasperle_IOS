@@ -16,5 +16,5 @@ protocol Mapable
 
 protocol JsonDecodable
 {
-    @discardableResult func getJsonData() -> Any
+    @discardableResult func getJsonData() -> [String: Any]
 }
