@@ -10,12 +10,29 @@ import UIKit
 
 class NetworkController
 {
-    static func getPartners(_ postData: PartnersPostData, _ completion: @escaping (PartnerList?) -> Void)
+    static func getAuthorization(_ postData: GalleryPostData, _ completion: @escaping (Gallery?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!
         fetchRawData(request, completion)
     }
     
+    static func getAuthorization(_ postData: AuthorizationPostData, _ completion: @escaping (Authorization?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
+    static func changeUserProfileData(_ postData: ChangeUserProfilePostData, _ completion: @escaping (User?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
+    static func getPartners(_ postData: PartnersPostData, _ completion: @escaping (PartnerList?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
     
     static func getNews(_ postData: NewsPostData, _ completion: @escaping (NewsList?) -> Void)
     {

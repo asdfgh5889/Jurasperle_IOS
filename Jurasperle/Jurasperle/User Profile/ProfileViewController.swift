@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController
             DispatchQueue.main.sync {
                 if user != nil
                 {
-                    self.userDateOfBirth.text = user?.birthData
+                    self.userDateOfBirth.text = user?.birthDate
                     self.userWorkPlace.text = user?.workPlace.ruString
                     self.webPageLink.text = user?.website
                     self.Ampula.text = user?.ampula.ruString

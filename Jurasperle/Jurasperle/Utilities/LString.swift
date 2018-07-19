@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LString: Mapable
+class LString: Mapable, JsonDecodable
 {
     var enString: String?
     var ruString: String?
@@ -37,6 +37,16 @@ class LString: Mapable
         self.ruString = Utilities.ToString(from: jsonDic["ru"])
         
         return true
+    }
+    
+    @discardableResult func getJsonData() -> [String: Any]
+    {
+        var jsonObject = [String: Any]()
+        
+        jsonObject["en"] = self.enString
+        jsonObject["ru"] = self.ruString
+        
+        return jsonObject
     }
     
     static func +=(left: inout String?, right: LString)

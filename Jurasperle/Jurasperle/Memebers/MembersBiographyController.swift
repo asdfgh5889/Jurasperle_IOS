@@ -44,7 +44,7 @@ class MembersBiographyController: UIViewController {
             memberBio.text = "Этот участник не добавил автобиографию"
         }
         
-        memberDateOfBirth.text = user.birthData
+        memberDateOfBirth.text = user.birthDate
         memberWebPage.text = user.website
         memberEmail.text = user.email
         

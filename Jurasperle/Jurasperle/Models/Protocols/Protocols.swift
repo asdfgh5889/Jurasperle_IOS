@@ -13,3 +13,8 @@ protocol Mapable
     init()
     @discardableResult func mapData(fromJson json: Any) -> Bool
 }
+
+protocol JsonDecodable
+{
+    @discardableResult func getJsonData() -> [String: Any]
+}

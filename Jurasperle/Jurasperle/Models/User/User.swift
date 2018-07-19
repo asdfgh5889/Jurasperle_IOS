@@ -8,11 +8,11 @@
 
 import UIKit
 
-class User: Mapable
+class User: Mapable, JsonDecodable
 {
     var id: Int?
     var name = LString()
-    var birthData: String?
+    var birthDate: String?
     var ampula = LString()
     var workPlace = LString()
     var website: String?
@@ -41,10 +41,29 @@ class User: Mapable
         self.ampula.mapData(fromJson: data["amplua"])
         self.workPlace.mapData(fromJson: data["work_place"])
         self.userId = Utilities.ToInt(from: data["user_id"])
-        self.birthData = Utilities.ToString(from: data["birth_date"])
+        self.birthDate = Utilities.ToString(from: data["birth_date"])
         self.sinceMemeber = Utilities.ToString(from: data["member_date"])
         self.website = Utilities.ToString(from: data["web_site"])
         self.email = Utilities.ToString(from: data["email"])
         return true
+    }
+    
+    @discardableResult func getJsonData() -> [String:Any]
+    {
+        var jsonObject = [String: Any]()
+        
+        jsonObject["id"] = self.id
+        jsonObject["avatar"] = self.photoURLStr
+        jsonObject["name"] = self.name.getJsonData()
+        jsonObject["bio"] = self.bio.getJsonData()
+        jsonObject["amplua"] = self.ampula.getJsonData()
+        jsonObject["work_place"] = self.workPlace.getJsonData()
+        jsonObject["user_id"] = self.userId
+        jsonObject["birth_date"] = self.birthDate
+        jsonObject["member_date"] = self.sinceMemeber
+        jsonObject["web_site"] = self.website
+        jsonObject["email"] = self.email
+        
+        return jsonObject
     }
 }
