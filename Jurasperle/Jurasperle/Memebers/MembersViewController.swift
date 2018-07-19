@@ -25,9 +25,11 @@ class MembersViewController: UIViewController,UITableViewDataSource, UITableView
     
     func setUpmemberData()
     {
+        ViewLoader.showLoaderView(for: self.view)
         let pd = MembersPostData()
         NetworkController.getMemebers(pd){ (member: Members?) in
             DispatchQueue.main.sync {
+                 ViewLoader.hideLoaderView(for: self.view)
                 if let member = member
                 {
                     self.member = member
