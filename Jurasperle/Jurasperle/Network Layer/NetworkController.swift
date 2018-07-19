@@ -10,7 +10,7 @@ import UIKit
 
 class NetworkController
 {
-    static func getAuthorization(_ postData: GalleryPostData, _ completion: @escaping (Gallery?) -> Void)
+    static func getGallery(_ postData: GalleryPostData, _ completion: @escaping (Gallery?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!
         fetchRawData(request, completion)
