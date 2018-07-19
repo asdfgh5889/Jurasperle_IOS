@@ -13,12 +13,22 @@ class JurasperleAPI
     
     static func dataUnwrapper(_ json: Any) -> [String: Any]?
     {
+        return dataUnwrapper(json, "data")
+    }
+    
+    static func dataArrayUnwrapper(_ json: Any) -> [Any]?
+    {
+        return dataArrayUnwrapper(json, "data")
+    }
+    
+    static func dataUnwrapper(_ json: Any, _ withKey: String) -> [String: Any]?
+    {
         guard let jsonDic = json as? [String: Any] else
         {
             return nil
         }
         
-        if let data = jsonDic["data"] as? [String: Any]
+        if let data = jsonDic[withKey] as? [String: Any]
         {
             return data
         }
@@ -28,14 +38,14 @@ class JurasperleAPI
         }
     }
     
-    static func dataArrayUnwrapper(_ json: Any) -> [Any]?
+    static func dataArrayUnwrapper(_ json: Any, _ withKey: String) -> [Any]?
     {
         guard let jsonDic = json as? [String: Any] else
         {
             return nil
         }
         
-        if let data = jsonDic["data"] as? [Any]
+        if let data = jsonDic[withKey] as? [Any]
         {
             return data
         }

@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
                     if JurasError.init().errorCode == 0
                     {
                         UserGlobalData.auth = auth
+                        self.test()
                         self.performSegue(withIdentifier: "goMainView", sender: self)
                     }
                     else
@@ -44,9 +45,17 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-        
-      
-        
+    }
+    
+    func test()
+    {
+        let pd = GetContactsPostData()
+        NetworkController.getContacts(pd) { (_ contacts: ContactList?) in
+            if let contacts = contacts
+            {
+                print("working")
+            }
+        }
     }
   
 
