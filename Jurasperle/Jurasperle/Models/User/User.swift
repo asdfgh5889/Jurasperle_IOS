@@ -48,7 +48,7 @@ class User: Mapable, JsonDecodable
         return true
     }
     
-    @discardableResult func getJsonData() -> [String:Any]
+    @discardableResult func getJsonData() -> Any
     {
         var jsonObject = [String: Any]()
         

@@ -22,7 +22,7 @@ protocol HasQueryItems
 
 protocol HasJsonBody
 {
-    typealias JsonBody = [String: Any]
+    typealias JsonBody = Any
     func getJsonBody() -> JsonBody?
 }
 
