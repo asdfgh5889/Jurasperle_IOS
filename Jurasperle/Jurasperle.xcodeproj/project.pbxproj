@@ -806,6 +806,7 @@
 			baseConfigurationReference = F83D0D880A924ED93622D7E5 /* Pods-Jurasperle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65CXF5Q8FV;
 				INFOPLIST_FILE = Jurasperle/Info.plist;
@@ -816,6 +817,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jurasperle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -826,6 +829,7 @@
 			baseConfigurationReference = 27A887AADC22E96AA7531C90 /* Pods-Jurasperle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65CXF5Q8FV;
 				INFOPLIST_FILE = Jurasperle/Info.plist;
@@ -836,6 +840,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jurasperle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
