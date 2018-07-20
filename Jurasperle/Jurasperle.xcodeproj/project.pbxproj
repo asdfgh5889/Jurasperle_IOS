@@ -56,7 +56,7 @@
 		27D7527720FCC0CD00324F54 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7527620FCC0CD00324F54 /* Extensions.swift */; };
 		27D7527920FCC24F00324F54 /* ConversationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7527820FCC24F00324F54 /* ConversationList.swift */; };
 		27D7527B20FCC31A00324F54 /* ConversationsPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7527A20FCC31A00324F54 /* ConversationsPostData.swift */; };
-		336D39960F7BFDEEE79B5781 /* Pods_Jurasperle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F1268EFCE47BCADF11E79A /* Pods_Jurasperle.framework */; };
+		61FDE0B7A2BA304BFAA8700C /* Pods_Jurasperle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F7E94531F7C6AB4350F642 /* Pods_Jurasperle.framework */; };
 		D80CE1CD20F890B90036297E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1CC20F890B90036297E /* ProfileViewController.swift */; };
 		D80CE1D120F891A90036297E /* BlockedUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D020F891A90036297E /* BlockedUsersTableViewController.swift */; };
 		D80CE1D320F8939F0036297E /* BlockedUsersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D220F8939F0036297E /* BlockedUsersCell.swift */; };
@@ -82,7 +82,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		26F1268EFCE47BCADF11E79A /* Pods_Jurasperle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jurasperle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		273C92D320FFE7240050CB74 /* PartnersPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersPostData.swift; sourceTree = "<group>"; };
 		27422B6A20FDE66A008579A4 /* ConversationRoomInfoPostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRoomInfoPostData.swift; sourceTree = "<group>"; };
 		27422B7320FDEAF6008579A4 /* ConversationRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoom.swift; sourceTree = "<group>"; };
@@ -119,7 +118,6 @@
 		277445BA20F8EC63004E5F2C /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 		27745EDE20FA10A8009F8061 /* Partner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partner.swift; sourceTree = "<group>"; };
 		27745EE020FA25A8009F8061 /* PartnerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerList.swift; sourceTree = "<group>"; };
-		27A887AADC22E96AA7531C90 /* Pods-Jurasperle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.release.xcconfig"; sourceTree = "<group>"; };
 		27B616E820E7CC0000AC52F5 /* Jurasperle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jurasperle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B616EB20E7CC0000AC52F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27B616ED20E7CC0000AC52F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +133,9 @@
 		27D7527620FCC0CD00324F54 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		27D7527820FCC24F00324F54 /* ConversationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationList.swift; sourceTree = "<group>"; };
 		27D7527A20FCC31A00324F54 /* ConversationsPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsPostData.swift; sourceTree = "<group>"; };
+		673BB8815964B7FB5E637324 /* Pods-Jurasperle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.release.xcconfig"; sourceTree = "<group>"; };
+		93F7E94531F7C6AB4350F642 /* Pods_Jurasperle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jurasperle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6E12540B869A87D729AA812 /* Pods-Jurasperle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.debug.xcconfig"; sourceTree = "<group>"; };
 		D80CE1CC20F890B90036297E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D80CE1D020F891A90036297E /* BlockedUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersTableViewController.swift; sourceTree = "<group>"; };
 		D80CE1D220F8939F0036297E /* BlockedUsersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUsersCell.swift; sourceTree = "<group>"; };
@@ -157,7 +158,6 @@
 		D82509F620E9702A00989E81 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		D85929A620E9142600DBECAC /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		D85929AA20E9159200DBECAC /* MembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCell.swift; sourceTree = "<group>"; };
-		F83D0D880A924ED93622D7E5 /* Pods-Jurasperle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				336D39960F7BFDEEE79B5781 /* Pods_Jurasperle.framework in Frameworks */,
+				61FDE0B7A2BA304BFAA8700C /* Pods_Jurasperle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +318,8 @@
 			children = (
 				27B616EA20E7CC0000AC52F5 /* Jurasperle */,
 				27B616E920E7CC0000AC52F5 /* Products */,
-				A15AA7F2A05844087AC97FF8 /* Pods */,
-				349545FE1FA7E8AE699ACC9E /* Frameworks */,
+				7B618707B1B63810036AA5FD /* Pods */,
+				9F1F185A27A3FA60AE448DAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,21 +386,21 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
-		349545FE1FA7E8AE699ACC9E /* Frameworks */ = {
+		7B618707B1B63810036AA5FD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				26F1268EFCE47BCADF11E79A /* Pods_Jurasperle.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A15AA7F2A05844087AC97FF8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F83D0D880A924ED93622D7E5 /* Pods-Jurasperle.debug.xcconfig */,
-				27A887AADC22E96AA7531C90 /* Pods-Jurasperle.release.xcconfig */,
+				C6E12540B869A87D729AA812 /* Pods-Jurasperle.debug.xcconfig */,
+				673BB8815964B7FB5E637324 /* Pods-Jurasperle.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F1F185A27A3FA60AE448DAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93F7E94531F7C6AB4350F642 /* Pods_Jurasperle.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D80CE1CB20F890720036297E /* User Profile */ = {
@@ -477,11 +477,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27B616FA20E7CC0200AC52F5 /* Build configuration list for PBXNativeTarget "Jurasperle" */;
 			buildPhases = (
-				930E3475E9F3393E8C5CAD54 /* [CP] Check Pods Manifest.lock */,
+				FCD42D4B656002DB97BDAF16 /* [CP] Check Pods Manifest.lock */,
 				27B616E420E7CC0000AC52F5 /* Sources */,
 				27B616E520E7CC0000AC52F5 /* Frameworks */,
 				27B616E620E7CC0000AC52F5 /* Resources */,
-				5B69DA4E548BF3AD1760ADDE /* [CP] Embed Pods Frameworks */,
+				279F7CBA2101EBA40035D749 /* ShellScript */,
+				AA6FA892FFFCB9253CBBB6B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -540,7 +541,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5B69DA4E548BF3AD1760ADDE /* [CP] Embed Pods Frameworks */ = {
+		279F7CBA2101EBA40035D749 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" e26a854ed8d8f4bbb462c18c7a4fa1aa51b67a2c 5087c7f318cdc867adfd37d80ac4749dafa5bd31c373f2905a4526c39f99a0d6";
+		};
+		AA6FA892FFFCB9253CBBB6B4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -558,7 +572,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		930E3475E9F3393E8C5CAD54 /* [CP] Check Pods Manifest.lock */ = {
+		FCD42D4B656002DB97BDAF16 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -791,18 +805,22 @@
 		};
 		27B616FB20E7CC0200AC52F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F83D0D880A924ED93622D7E5 /* Pods-Jurasperle.debug.xcconfig */;
+			baseConfigurationReference = C6E12540B869A87D729AA812 /* Pods-Jurasperle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65CXF5Q8FV;
 				INFOPLIST_FILE = Jurasperle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = humanz.Jurasperle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jurasperle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -810,18 +828,22 @@
 		};
 		27B616FC20E7CC0200AC52F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27A887AADC22E96AA7531C90 /* Pods-Jurasperle.release.xcconfig */;
+			baseConfigurationReference = 673BB8815964B7FB5E637324 /* Pods-Jurasperle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 65CXF5Q8FV;
 				INFOPLIST_FILE = Jurasperle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = humanz.Jurasperle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jurasperle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
