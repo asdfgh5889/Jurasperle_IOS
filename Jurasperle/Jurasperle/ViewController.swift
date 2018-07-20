@@ -39,11 +39,26 @@ class ViewController: UIViewController
     }
     
     
-    @IBAction func logoutButtonAction(_ sender: Any) {
+    @IBAction func logoutButtonAction(_ sender: Any)
+    {
+        let alert = UIAlertController(title: "", message: "Выйти из аккаунта?", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Отмена", style: .cancel, handler: {{ (action: UIAlertAction) in
+            alert.dismiss(animated: true, completion: nil)
+            }}())
+        let delete = UIAlertAction(title: "Да", style: .destructive, handler: {
+        { (action: UIAlertAction) in
+            UserGlobalData.logout()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginView")
+            UIApplication.shared.keyWindow?.rootViewController = initialViewController
+            }}())
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
     }
     
-
-    @IBAction func goToChatView(_ sender: Any) {
+    @IBAction func goToChatView(_ sender: Any)
+    {
         
     }
 }

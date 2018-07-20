@@ -63,6 +63,7 @@ class LoginViewController: KeyboardManagedViewController
     
     private func onFailure() -> Void
     {
+        ViewLoader.hideLoaderView(for: self.view)
         let alert = UIAlertController(title: "Неверные данные", message: "Не верный логин или пароль", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: {{ (action: UIAlertAction) in
             alert.dismiss(animated: true, completion: nil)
