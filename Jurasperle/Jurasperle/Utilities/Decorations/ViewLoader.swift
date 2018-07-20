@@ -23,7 +23,7 @@ class ViewLoader
             wrapper.isUserInteractionEnabled = true
             
             let loaderView = UIVisualEffectView(frame: CGRect(origin: view.center, size: loaderViewSize))
-            loaderView.effect = UIBlurEffect(style: .extraLight)
+            loaderView.effect = UIBlurEffect(style: .dark)
             loaderView.translatesAutoresizingMaskIntoConstraints = false
             loaderView.clipsToBounds = true
             loaderView.layer.cornerRadius = 8

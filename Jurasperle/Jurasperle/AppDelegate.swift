@@ -16,12 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
+    {
         UINavigationBar.appearance().tintColor = .white
-        Fabric.with([Crashlytics.self])
-        Fabric.with([Answers.self])
-        // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        if let initView = self.window?.rootViewController as? LoginViewController
+        {
+            initView.isLauchScreen = true
+        }
+        
+        //Loggin in To system
+        UserGlobalData.loadUserData({
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginView")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }) { (_ auth: Authorization?) in
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainView")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 

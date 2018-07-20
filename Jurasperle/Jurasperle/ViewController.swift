@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController
+{
     @IBOutlet weak var MembersView: UIView!
     @IBOutlet weak var galleryView: UIView!
     @IBOutlet weak var partnersView: UIView!
@@ -18,12 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var chatView: UIView!
     var color:UIColor = UIColor(red: 205/255, green: 133/255, blue: 63/255, alpha: 1)
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-       setViewStyles()
+        setViewStyles()
     }
-
-   func setViewStyles()
+    
+    func setViewStyles()
     {
         galleryView.layer.addBorder(edge: .left, color: color, thickness: 1)
         partnersView.layer.addBorder(edge: .top, color:color , thickness: 1)
@@ -34,7 +35,7 @@ class ViewController: UIViewController {
         chatView.layer.addBorder(edge: .top, color: color, thickness: 1)
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-
+        
     }
     
     
@@ -51,8 +52,8 @@ class ViewController: UIViewController {
 
 
 // Extantions
-extension CALayer {
-    
+extension CALayer
+{    
     func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
         
         let border = CALayer();

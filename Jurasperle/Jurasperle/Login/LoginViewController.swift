@@ -8,59 +8,59 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: KeyboardManagedViewController
+{
 
-    @IBOutlet weak var loginField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginField: KMUITextField!
+    @IBOutlet weak var passwordField: KMUITextField!
+    @IBOutlet weak var authView: UIView!
+    @IBOutlet weak var submitButton: UIButton!
+    
+    var isLauchScreen: Bool = false
     var goToHomePage: Bool = true
     var viewControllerOnBack: UIViewController?
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        authView.isHidden = isLauchScreen
+        submitButton.isHidden = isLauchScreen
+        
+        if isLauchScreen
+        {
+            ViewLoader.showLoaderView(for: self.view)
+        }
+    }
+    
     override func viewDidLoad()
     {
+        self.textFields.append(self.loginField)
+        self.textFields.append(self.passwordField)
+        self.onReturn = loginButtonAction
         super.viewDidLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        if isLauchScreen
+        {
+            ViewLoader.hideLoaderView(for: self.view)
+        }
+    }
     
-    @IBAction func loginButtonAction(_ sender: Any)
+    @IBAction func loginButtonAction()
     {
         ViewLoader.showLoaderView(for: self.view)
-        let pd = LoginPostData(self.loginField.text ?? "", self.passwordField.text ?? "")
-        NetworkController.login(pd) { (auth: Authorization?) in
-            DispatchQueue.main.sync {
-                ViewLoader.hideLoaderView(for: self.view)
-                if auth != nil
-                {
-                    if JurasError.init().errorCode == 0
-                    {
-                        UserGlobalData.auth = auth
-                        self.test()
-                        self.performSegue(withIdentifier: "goMainView", sender: self)
-                    }
-                    else
-                    {
-                        self.onFailure()
-                    }
-                }
-                else
-                {
-                    self.onFailure()
-                }
-            }
-        }
-    }
-    
-    func test()
-    {
-        let pd = GetContactsPostData()
-        NetworkController.getContacts(pd) { (_ contacts: ContactList?) in
-            if let contacts = contacts
-            {
-                print("working")
-            }
-        }
+        UserGlobalData.login(self.loginField.text ?? "", self.passwordField.text ?? "", self.onFailure, self.onSuccess)
     }
   
-
+    private func onSuccess(_ auth: Authorization?) -> Void
+    {
+        ViewLoader.hideLoaderView(for: self.view)
+        self.performSegue(withIdentifier: "goMainView", sender: self)
+    }
+    
     private func onFailure() -> Void
     {
         let alert = UIAlertController(title: "Неверные данные", message: "Не верный логин или пароль", preferredStyle: .alert)

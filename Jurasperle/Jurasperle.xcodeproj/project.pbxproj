@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27104083210203D9009DE217 /* KeyboardManagedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27104082210203D9009DE217 /* KeyboardManagedViewController.swift */; };
 		273C92D420FFE7240050CB74 /* PartnersPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273C92D320FFE7240050CB74 /* PartnersPostData.swift */; };
 		27422B6B20FDE66A008579A4 /* ConversationRoomInfoPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B6A20FDE66A008579A4 /* ConversationRoomInfoPostData.swift */; };
 		27422B7420FDEAF7008579A4 /* ConversationRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27422B7320FDEAF6008579A4 /* ConversationRoom.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27104082210203D9009DE217 /* KeyboardManagedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManagedViewController.swift; sourceTree = "<group>"; };
 		273C92D320FFE7240050CB74 /* PartnersPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersPostData.swift; sourceTree = "<group>"; };
 		27422B6A20FDE66A008579A4 /* ConversationRoomInfoPostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationRoomInfoPostData.swift; sourceTree = "<group>"; };
 		27422B7320FDEAF6008579A4 /* ConversationRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationRoom.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				277445B220F8BD84004E5F2C /* UserGlobalData.swift */,
 				277445B420F8BDCC004E5F2C /* LString.swift */,
 				27D7527620FCC0CD00324F54 /* Extensions.swift */,
+				27104082210203D9009DE217 /* KeyboardManagedViewController.swift */,
 				2745CF3D210123BA003C763A /* Texts.swift */,
 			);
 			path = Utilities;
@@ -630,6 +633,7 @@
 				D82509F320E966FE00989E81 /* MembersBiographyController.swift in Sources */,
 				D82509F520E96DA500989E81 /* PartnersViewController.swift in Sources */,
 				277445AB20F89542004E5F2C /* Protocols.swift in Sources */,
+				27104083210203D9009DE217 /* KeyboardManagedViewController.swift in Sources */,
 				27D7526F20FCA0B600324F54 /* ConversationRoomInfo.swift in Sources */,
 				27422B7A20FE03F4008579A4 /* MessagePostData.swift in Sources */,
 				2745CF3E210123BB003C763A /* Texts.swift in Sources */,
