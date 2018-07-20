@@ -10,6 +10,12 @@ import UIKit
 
 class NetworkController
 {
+    static func logout(_ postData: LogoutPostData, _ completion: @escaping (GeneralResponse?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
     static func getContacts(_ postData: GetContactsPostData, _ completion: @escaping (ContactList?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!

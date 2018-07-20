@@ -11,6 +11,7 @@ import Foundation
 enum JurasErrorCode: Int
 {
     case noError = 0
+    case error = 1
 }
 
 class JurasError: Mapable

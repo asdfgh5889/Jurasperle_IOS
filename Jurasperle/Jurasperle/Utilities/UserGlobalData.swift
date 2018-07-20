@@ -34,6 +34,7 @@ class UserGlobalData
     
     static func logout()
     {
+        NetworkController.logout(LogoutPostData()) { (_: GeneralResponse?) in }
         saveUserData(login: "", password: "")
     }
     
