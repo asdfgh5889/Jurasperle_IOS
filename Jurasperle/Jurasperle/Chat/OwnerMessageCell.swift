@@ -8,26 +8,17 @@
 
 import UIKit
 
-class OwnerMessageCell: UITableViewCell {
+class OwnerMessageCell: UITableViewCell
+{
 
     @IBOutlet weak var ownerMessageLabel: UILabel!
     
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
      
         ownerMessageLabel.textColor = .white
-        ownerMessageLabel.layer.cornerRadius = 8
+        ownerMessageLabel.layer.cornerRadius = 5
         ownerMessageLabel.layer.masksToBounds = true
-        
-        
     }
-    
- 
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

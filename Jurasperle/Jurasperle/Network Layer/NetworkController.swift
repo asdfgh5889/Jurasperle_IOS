@@ -55,6 +55,7 @@ class NetworkController
     static func sendMessage(_ postData: MessagePostData, _ completion: @escaping (ConversationRoomInfo?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!
+        print(request)
         fetchRawData(request, completion)
     }
     
@@ -151,6 +152,7 @@ class NetworkController
         }
         catch
         {
+            print(data)
             print(error.localizedDescription)
             return nil
         }

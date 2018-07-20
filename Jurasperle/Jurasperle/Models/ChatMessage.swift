@@ -31,6 +31,7 @@ class ChatMessage: Mapable
         self.isImage = Utilities.ToBool(fron: data["is_image"]) ?? false
         self.recordTime = Utilities.ToString(from: data["record_time"])
         self.senderUserId = Utilities.ToInt(from: data["user_id"])
+        self.text = Utilities.ToString(from: data["text"])
         
         let tempUser = User()
         if tempUser.mapData(fromJson: data["profile"])
