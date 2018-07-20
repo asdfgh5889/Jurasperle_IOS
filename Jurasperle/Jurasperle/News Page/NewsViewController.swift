@@ -8,33 +8,77 @@
 
 import UIKit
 
-class NewsViewController: UITableViewController {
-
+class NewsViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var newsTable: UITableView!
+    var newsList = NewsList()
+    var newsGalleryControllers = [NewsGalleryController]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        newsTable.delegate = self
+        newsTable.dataSource = self
+        setUpNewsData()
     }
-
- 
-
-
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    
+    
+    func setUpNewsData()
+    {
+         ViewLoader.showLoaderView(for: self.view)
+        let pd = NewsPostData()
+        NetworkController.getNews(pd){ (newsList: NewsList?) in
+            DispatchQueue.main.sync {
+                ViewLoader.hideLoaderView(for: self.view)
+                if let newsList = newsList
+                {
+                    self.newsList = newsList
+                    
+                    for news in newsList.news
+                    {
+                        self.newsGalleryControllers.append(NewsGalleryController(news.images)) 
+                    }
+                    
+                    self.newsTable.reloadData()
+                }
+            }
+            
+        }
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 2
+        return newsList.news.count
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell")as? NewsCell
-        return cell!
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell") as! NewsCell
+        cell.newsDate.text = newsList.news[indexPath.row].publishData
+        cell.newsTitle.text = newsList.news[indexPath.row].title.ruString
+        let string1 = newsList.news[indexPath.row].content.ruString?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        let newsContent = string1?.replacingOccurrences(of: "&[^;]+;", with: "", options: String.CompareOptions.regularExpression, range: nil)
+        cell.newsBody.text = newsContent
+        cell.moreButton.tag = indexPath.row
         
+        cell.newsImages.dataSource = self.newsGalleryControllers[indexPath.row]
+        cell.newsImages.delegate = self.newsGalleryControllers[indexPath.row]
+        cell.newsImages.reloadData()
+        
+        return cell
     }
-
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "moreNews"
+        {
+            if let controller = segue.destination as? MoreNewsViewController, let moreInfoButton = sender as? UIButton
+            {
+                controller.news = newsList.news[moreInfoButton.tag]
+            }
+        }
+    }
+    
+    
 }

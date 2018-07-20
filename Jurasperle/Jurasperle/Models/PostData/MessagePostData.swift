@@ -41,6 +41,6 @@ class MessagePostData: PostDataProtocol, HasHeaderItems, HasQueryItems
     
     func getPath() -> String
     {
-        return "\(JurasperleAPI.conversations)/\(self.conversationId)"
+        return "\(JurasperleAPI.messages)/\(self.conversationId)"
     }
 }

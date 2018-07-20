@@ -42,7 +42,7 @@ class RequestController
             return nil
         }
         
-        urlComponents.path = "\(baseAPIPath)\(method)/"
+        urlComponents.path = prepareStrURL("\(baseAPIPath)\(method)/")
         
         if let pdWithQuery = postData as? HasQueryItems
         {
@@ -96,5 +96,33 @@ class RequestController
         }
         
         return request
+    }
+    
+    static func prepareStrURL(_ strUrl: String) -> String
+    {
+        var count = 0
+        var prepared = ""
+        for strChar in strUrl
+        {
+            if strChar == "/"
+            {
+                count += 1
+            }
+            else
+            {
+                count = 0
+            }
+            
+            if count != 2
+            {
+                prepared.append(strChar)
+            }
+            else
+            {
+                count = 0
+            }
+        }
+        
+        return prepared
     }
 }

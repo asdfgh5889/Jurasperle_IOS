@@ -19,7 +19,7 @@ class ViewLoader
         if loaderViews[view.hashValue] == nil
         {
             let wrapper = UIView(frame: view.frame)
-            wrapper.backgroundColor = UIColor.white.withAlphaComponent(0.6)
+            wrapper.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             wrapper.isUserInteractionEnabled = true
             
             let loaderView = UIVisualEffectView(frame: CGRect(origin: view.center, size: loaderViewSize))

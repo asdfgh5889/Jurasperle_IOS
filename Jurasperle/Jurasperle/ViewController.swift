@@ -32,12 +32,13 @@ class ViewController: UIViewController {
         profileView.layer.addBorder(edge: .top, color: color, thickness: 1)
         chatView.layer.addBorder(edge: .left, color: color, thickness: 1)
         chatView.layer.addBorder(edge: .top, color: color, thickness: 1)
-        navigationController?.navigationBar.barTintColor = UIColor.darkGray
-        
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+
     }
 
     @IBAction func goToChatView(_ sender: Any) {
-        print("Hello")
+        
     }
 }
 

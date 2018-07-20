@@ -23,9 +23,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButtonAction(_ sender: Any)
     {
+        ViewLoader.showLoaderView(for: self.view)
         let pd = LoginPostData(self.loginField.text ?? "", self.passwordField.text ?? "")
         NetworkController.login(pd) { (auth: Authorization?) in
             DispatchQueue.main.sync {
+                ViewLoader.hideLoaderView(for: self.view)
                 if auth != nil
                 {
                     if JurasError.init().errorCode == 0

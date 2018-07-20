@@ -42,9 +42,11 @@ class ProfileViewController: UIViewController
     
     func setupUserData()
     {
+        ViewLoader.showLoaderView(for: self.view)
         let pd = UserProfilePostData()
         NetworkController.getUserProfile(pd) { (user: User?) in
             DispatchQueue.main.sync {
+                ViewLoader.hideLoaderView(for: self.view)
                 if user != nil
                 {
                     self.userDateOfBirth.text = user?.birthDate

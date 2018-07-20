@@ -29,6 +29,7 @@ class ConversationRoom: Mapable
                 self.messages.append(temp)
             }
         }
+        self.messages.reverse()
         
         return true
     }

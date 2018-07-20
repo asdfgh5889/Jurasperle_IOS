@@ -8,40 +8,72 @@
 
 import UIKit
 
-class ChatsTableViewController: UITableViewController {
+class ChatsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+{
+    @IBOutlet var tableview: UITableView!
+    
+    var conversationList: ConversationList?
     
     let cellChat = "cellChat"
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        self.tableview.dataSource = self
+        self.tableview.delegate = self
+        ViewLoader.showLoaderView(for: self.view)
+        NetworkController.getConversationList(ConversationsPostData()) {
+            (conversationList: ConversationList?) in
+            DispatchQueue.main.sync {
+                ViewLoader.hideLoaderView(for: self.view)
+                if let list = conversationList
+                {
+                    self.conversationList = list
+                    self.tableview.reloadData()
+                }
+            }
+        }
     }
-
-   
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 1
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
-    }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellChat, for: indexPath) as! ChatTableViewCell
-        cell.nameOfPerson.text = "Person \(indexPath.row)"
-        cell.lastMessageLabel.text = "This is a example text number \(indexPath.row)"
-        cell.timeLabel.text = "12:00"
-        
-        return cell
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.conversationList?.conversationRooms.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
         return 70
     }
     
-
-   
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellChat, for: indexPath) as! ChatTableViewCell
+        cell.nameOfPerson.text = self.conversationList?.conversationRooms[indexPath.row].title
+        cell.lastMessageLabel.text = self.conversationList?.conversationRooms[indexPath.row].lastMessageTime
+        cell.timeLabel.text = self.conversationList?.conversationRooms[indexPath.row].lastMessageTime
+        cell.profileImageView.kf.setImage(with: URL(string: self.conversationList?.conversationRooms[indexPath.row].logoURLStr ?? ""))
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        performSegue(withIdentifier: "conversationRoom", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "conversationRoom"
+        {
+            if let controller = segue.destination as? MessagesViewController,
+                let index = sender as? Int
+            {
+                controller.conversationId = self.conversationList?.conversationRooms[index].id ?? 0
+            }
+        }
+    }
 }
