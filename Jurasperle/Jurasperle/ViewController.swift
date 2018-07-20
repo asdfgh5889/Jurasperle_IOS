@@ -36,11 +36,19 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 
     }
+    
+    
+    @IBAction func logoutButtonAction(_ sender: Any) {
+    }
+    
 
     @IBAction func goToChatView(_ sender: Any) {
         
     }
 }
+
+
+
 
 // Extantions
 extension CALayer {

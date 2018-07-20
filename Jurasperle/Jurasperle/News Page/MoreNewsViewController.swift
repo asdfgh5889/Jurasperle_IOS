@@ -8,20 +8,26 @@
 
 import UIKit
 
-class MoreNewsViewController: UIViewController {
+class MoreNewsViewController: UIViewController, UIWebViewDelegate {
     
-    @IBOutlet weak var newsBody: UITextView!
+    @IBOutlet weak var newsBody: UIWebView!
+    
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var newsDate: UILabel!
     var news: News!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        newsBody.delegate = self
         newsDate.text = news.publishData
         newsTitle.text = news.title.ruString
-        let string1 = news.content.ruString?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-        let newsContent = string1?.replacingOccurrences(of: "&[^;]+;", with: "", options: String.CompareOptions.regularExpression, range: nil)
-        
-        newsBody.text = newsContent
+        newsBody.loadHTMLString(news.content.ruString!, baseURL: nil)
+     }
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if navigationType == UIWebViewNavigationType.linkClicked {
+            UIApplication.shared.openURL(request.url!)
+            return false
+        }
+        return true
     }
 }
