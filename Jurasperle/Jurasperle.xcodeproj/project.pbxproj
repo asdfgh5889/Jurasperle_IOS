@@ -75,6 +75,7 @@
 		D80CE1DA20F8BB640036297E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80CE1D920F8BB640036297E /* LoginViewController.swift */; };
 		D811AA402101E78B00962247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D811AA3F2101E78900962247 /* Assets.xcassets */; };
 		D811AA442101E97F00962247 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811AA432101E97F00962247 /* EventsViewController.swift */; };
+		D817A08821036B4D009233C6 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D817A08721036B4D009233C6 /* EventCell.swift */; };
 		D819C65620FFEC7C00FBDD9F /* PartnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D819C65520FFEC7C00FBDD9F /* PartnerCell.swift */; };
 		D81BE80720F698B800E23EBF /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81BE80220F698B700E23EBF /* ChatTableViewCell.swift */; };
 		D81BE80820F698B800E23EBF /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81BE80320F698B700E23EBF /* ChatsTableViewController.swift */; };
@@ -166,6 +167,7 @@
 		D80CE1D920F8BB640036297E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D811AA3F2101E78900962247 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D811AA432101E97F00962247 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		D817A08721036B4D009233C6 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		D819C65520FFEC7C00FBDD9F /* PartnerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerCell.swift; sourceTree = "<group>"; };
 		D81BE80220F698B700E23EBF /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
 		D81BE80320F698B700E23EBF /* ChatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				D811AA432101E97F00962247 /* EventsViewController.swift */,
+				D817A08721036B4D009233C6 /* EventCell.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				277445A520F8923F004E5F2C /* LoginPostData.swift in Sources */,
 				2745DF602100904A00E3ECCB /* AuthorizationPostData.swift in Sources */,
 				274626DA21035686007D9727 /* Event.swift in Sources */,
+				D817A08821036B4D009233C6 /* EventCell.swift in Sources */,
 				2741D9DB210289FC00277265 /* PageMetadata.swift in Sources */,
 				277445AD20F8B7BE004E5F2C /* Error.swift in Sources */,
 				277445BB20F8EC63004E5F2C /* Members.swift in Sources */,

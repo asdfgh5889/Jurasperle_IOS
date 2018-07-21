@@ -36,6 +36,7 @@ class MoreNewsViewController: UIViewController, UIWebViewDelegate
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool
     {
+        ViewLoader.showLoaderView(for: self.view)
         if navigationType == UIWebViewNavigationType.linkClicked {
             UIApplication.shared.openURL(request.url!)
             return false
@@ -45,6 +46,7 @@ class MoreNewsViewController: UIViewController, UIWebViewDelegate
 
     func webViewDidFinishLoad(_ webView: UIWebView)
     {
+        ViewLoader.hideLoaderView(for: self.view)
         let css = "body { color : #fff } #carousel  { width: 100%; height: 200px; background-color: transparent; overflow: scroll; -webkit-overflow-scrolling: touch; white-space:nowrap; padding-top: 40px;}  #carousel .slide { display: inline-block; } #carousel .object-fit_cover { object-fit: cover } #carousel img { height: 200px; background-color: transparent;}"
         let js = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
         

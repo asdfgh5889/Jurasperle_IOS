@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController
     
     @IBOutlet weak var userEmail: UITextField!
     
+   
     @IBOutlet weak var userBiography: UITextView!
     @IBOutlet weak var userPhotoGalleryCollection: UICollectionView!
     @IBOutlet weak var userGalleryImageCell: UIImageView!
@@ -64,5 +65,9 @@ class ProfileViewController: UIViewController
         }
      }
     
+    @IBAction func saveButtonAction(_ sender: Any) {
+        
+        
+    }
     
 }
