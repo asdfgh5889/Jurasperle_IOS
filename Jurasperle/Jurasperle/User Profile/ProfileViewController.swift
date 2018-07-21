@@ -31,11 +31,12 @@ class ProfileViewController: UIViewController
     @IBOutlet weak var saveButtonAction: UIButton!
     var blokedUsers = BlockedUsersTableViewController()
     @IBOutlet var blokedUsersTable: UITableView!
-    
+    var contacts = BlockedUsersTableViewController()
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.setupUserData()
+        contacts.setUpContacts()
         
     
     }
@@ -60,6 +61,7 @@ class ProfileViewController: UIViewController
                     self.userEmail.text = user?.email
                     self.blokedUsersTable.delegate = self.blokedUsers
                     self.blokedUsersTable.dataSource = self.blokedUsers
+                    self.blokedUsersTable.reloadData()
                 
                 }
             }
