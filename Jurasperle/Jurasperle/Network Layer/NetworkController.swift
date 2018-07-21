@@ -10,6 +10,12 @@ import UIKit
 
 class NetworkController
 {
+    static func writeToUser(_ postData: WriteToUserPostData, _ completion: @escaping (ConversationRoomInfo?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
     static func logout(_ postData: LogoutPostData, _ completion: @escaping (GeneralResponse?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!
@@ -55,12 +61,12 @@ class NetworkController
     static func sendMessage(_ postData: MessagePostData, _ completion: @escaping (ConversationRoomInfo?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!
-        print(request)
         fetchRawData(request, completion)
     }
     
     static func getConversationRoom(_ postData: ConversationRoomPostData, _ completion: @escaping (ConversationRoom?) -> Void)
     {
+        print(postData.getPath())
         let request = RequestController.generateRequest(postData)!
         fetchRawData(request, completion)
     }
@@ -95,28 +101,36 @@ class NetworkController
         fetchRawData(request!, completion)
     }
     
+    static var reAuth: Bool = true
     static func fetchRawData<T: Mapable>(_ request: URLRequest, _ completion: @escaping (T?) -> Void)
     {
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: request)
-            { (data, response, error) -> Void in
-                
-                if (error != nil)
-                {
-                    print("Something went wrong while fetching data")
-                    return
-                }
-                
-                guard let mappedObj = processRawData(data: data!, mapTo: T()) else
-                {
-                    print("Error While Processing raw data")
-                    completion(nil)
-                    return
-                }
-                
-                completion(mappedObj)
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: request)
+        { (data, response, error) -> Void in
+            
+            if (error != nil)
+            {
+                print("Something went wrong while fetching data")
+                return
             }
-            task.resume()
+            
+            guard let mappedObj = processRawData(data: data!, mapTo: T()) else
+            {
+                print("Error While Processing raw data")
+                
+                if reAuth
+                {
+                    UserGlobalData.loadUserData({}, nil)
+                    reAuth = false
+                }
+                
+                completion(nil)
+                return
+            }
+            reAuth = true
+            completion(mappedObj)
+        }
+        task.resume()
     }
     
     static func fetchRawData<T>(_ request: URLRequest, _ completion: @escaping ([T]?) -> Void) where T: Mapable
@@ -152,7 +166,7 @@ class NetworkController
         }
         catch
         {
-            print(data)
+            print(String(data: data, encoding: .utf8))
             print(error.localizedDescription)
             return nil
         }

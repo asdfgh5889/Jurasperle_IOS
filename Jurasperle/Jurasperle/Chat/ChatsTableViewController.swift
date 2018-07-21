@@ -53,10 +53,21 @@ class ChatsTableViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellChat, for: indexPath) as! ChatTableViewCell
-        cell.nameOfPerson.text = self.conversationList?.conversationRooms[indexPath.row].title
-        cell.lastMessageLabel.text = self.conversationList?.conversationRooms[indexPath.row].lastMessageTime
-        cell.timeLabel.text = self.conversationList?.conversationRooms[indexPath.row].lastMessageTime
-        cell.profileImageView.kf.setImage(with: URL(string: self.conversationList?.conversationRooms[indexPath.row].logoURLStr ?? ""))
+        let room = self.conversationList?.conversationRooms[indexPath.row]
+        
+        cell.nameOfPerson.text = room?.title
+        cell.lastMessageLabel.text = room?.lastMessageTime
+        cell.profileImageView.kf.setImage(with: URL(string: room?.logoURLStr ?? ""))
+        cell.unreadCount.layer.masksToBounds = true
+        if room?.unreadMessagesCount ?? 0 > 0
+        {
+            cell.unreadCount.isHidden = false
+            cell.unreadCount.text = room?.unreadMessagesCount.description
+        }
+        else
+        {
+            cell.unreadCount.isHidden = true
+        }
         return cell
     }
     

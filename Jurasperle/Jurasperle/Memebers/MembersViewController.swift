@@ -49,6 +49,7 @@ class MembersViewController: UIViewController,UITableViewDataSource, UITableView
         cell.memberNameLable.text = member.users[indexPath.row].name.ruString
         cell.memberImageCell.kf.setImage(with: URL(string: member.users[indexPath.row].photoURLStr!))
         cell.moreInfo.tag = indexPath.row
+        cell.sendMessage.tag = member.users[indexPath.row].userId ?? 0
         userIndex = indexPath.row
         return cell
     }
@@ -57,13 +58,35 @@ class MembersViewController: UIViewController,UITableViewDataSource, UITableView
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func goToChat(_ sender: UIButton)
+    {
+        if sender.tag != UserGlobalData.auth.id!
+        {
+            self.performSegue(withIdentifier: "chat", sender: sender.tag)
+        }
+        else
+        {
+            self.performSegue(withIdentifier: "conversationRoomList", sender: nil)
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
         if segue.identifier == "moreInfo"
         {
             if let controller = segue.destination as? MembersBiographyController, let moreInfoButton = sender as? UIButton
             {
                 controller.user = member.users[moreInfoButton.tag]
                 
+            }
+        }
+        if segue.identifier == "chat"
+        {
+            if let controller = segue.destination as? MessagesViewController,
+            let convId = sender as? Int
+            {
+                controller.receiverUserId = convId
             }
         }
     }

@@ -9,4 +9,6 @@ target 'Jurasperle' do
 	pod 'Kingfisher'
 	pod 'Fabric'
 	pod 'Crashlytics'
+	pod 'Firebase/Core'
+	pod 'Firebase/Messaging'
 end

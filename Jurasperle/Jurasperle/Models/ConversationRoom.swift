@@ -8,9 +8,10 @@
 
 import Foundation
 
-class ConversationRoom: Mapable
+class ConversationRoom: Mapable, HasPagination
 {
     var messages = [ChatMessage]()
+    var pageMetadata: PageMetadata?
     
     required init() {}
     
@@ -29,7 +30,12 @@ class ConversationRoom: Mapable
                 self.messages.append(temp)
             }
         }
-        self.messages.reverse()
+        
+        let temp = PageMetadata()
+        if temp.mapData(fromJson: json)
+        {
+            self.pageMetadata = temp
+        }
         
         return true
     }

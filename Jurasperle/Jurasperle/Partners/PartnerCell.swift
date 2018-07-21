@@ -14,5 +14,5 @@ class PartnerCell: UICollectionViewCell {
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
-    @IBOutlet var backgrounImage: UIImageView!
+    @IBOutlet var backgrounImage: UIImageView!    
 }
