@@ -607,7 +607,7 @@
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                     <connections>
-                                                                        <segue destination="GXP-OE-lOe" kind="show" id="bqc-JD-d6d"/>
+                                                                        <action selector="goToChat:" destination="wdw-PD-fmj" eventType="touchUpInside" id="pIJ-dh-eds"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -669,11 +669,13 @@
                     </view>
                     <connections>
                         <outlet property="membersTable" destination="laK-Tq-WxJ" id="3SP-0q-Y65"/>
+                        <segue destination="GXP-OE-lOe" kind="show" identifier="chat" id="DUw-kk-Cc8"/>
+                        <segue destination="7MG-i2-IUP" kind="show" identifier="conversationRoomList" id="jyC-wG-ei4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYr-Pv-6NY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="-354.67980295566502"/>
+            <point key="canvasLocation" x="1073" y="-332"/>
         </scene>
         <!--MessagesViewController-->
         <scene sceneID="OpJ-Iu-P51">
@@ -681,7 +683,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="MessagesViewController" storyboardName="Chat" referencedIdentifier="MessagesViewController" id="GXP-OE-lOe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdc-Hk-vOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832" y="-237"/>
+            <point key="canvasLocation" x="1826" y="-333"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="Fce-Ra-JQI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" id="7MG-i2-IUP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7t-vr-Qqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1827" y="-171"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="psX-Dg-LAQ">

@@ -50,7 +50,8 @@ class PartnersViewController: UIViewController,UICollectionViewDelegate,UICollec
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "partnerCell", for: indexPath)as! PartnerCell
         cell.backgrounImage.kf.setImage(with: URL(string: partnerlist.partners[indexPath.row].logoURLStr!))
         cell.phoneNumber.text = partnerlist.partners[indexPath.row].phonenumber
