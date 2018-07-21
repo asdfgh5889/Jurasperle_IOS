@@ -27,6 +27,9 @@
 		2745DF6221009AC100E3ECCB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF6121009AC100E3ECCB /* Contact.swift */; };
 		2745DF6421009D7A00E3ECCB /* ContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF6321009D7A00E3ECCB /* ContactList.swift */; };
 		2745DF662100C09900E3ECCB /* GetContactsPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2745DF652100C09900E3ECCB /* GetContactsPostData.swift */; };
+		274626DA21035686007D9727 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274626D921035686007D9727 /* Event.swift */; };
+		274626DC2103601A007D9727 /* EventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274626DB2103601A007D9727 /* EventsList.swift */; };
+		274626DE21036073007D9727 /* GetEventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274626DD21036073007D9727 /* GetEventsList.swift */; };
 		2747E5F320FAA21B000814C7 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F220FAA21B000814C7 /* GalleryItem.swift */; };
 		2747E5F520FAA6D4000814C7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F420FAA6D4000814C7 /* Gallery.swift */; };
 		2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F620FAA745000814C7 /* GalleryPostData.swift */; };
@@ -111,6 +114,9 @@
 		2745DF6121009AC100E3ECCB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		2745DF6321009D7A00E3ECCB /* ContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactList.swift; sourceTree = "<group>"; };
 		2745DF652100C09900E3ECCB /* GetContactsPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetContactsPostData.swift; sourceTree = "<group>"; };
+		274626D921035686007D9727 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		274626DB2103601A007D9727 /* EventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsList.swift; sourceTree = "<group>"; };
+		274626DD21036073007D9727 /* GetEventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsList.swift; sourceTree = "<group>"; };
 		2747E5F220FAA21B000814C7 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		2747E5F420FAA6D4000814C7 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		2747E5F620FAA745000814C7 /* GalleryPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPostData.swift; sourceTree = "<group>"; };
@@ -285,6 +291,15 @@
 			name = "Conversation Room";
 			sourceTree = "<group>";
 		};
+		274626D8210355FD007D9727 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				274626D921035686007D9727 /* Event.swift */,
+				274626DB2103601A007D9727 /* EventsList.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		2774459920F890E2004E5F2C /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +314,7 @@
 		277445A220F891D7004E5F2C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				274626D8210355FD007D9727 /* Events */,
 				27422B7B20FE2522008579A4 /* News */,
 				27422B7220FDEA01008579A4 /* Protocols */,
 				27422B7120FDE9FA008579A4 /* Errors */,
@@ -333,6 +349,7 @@
 				2745DF652100C09900E3ECCB /* GetContactsPostData.swift */,
 				2710408421022AE5009DE217 /* LogoutPostData.swift */,
 				27F4FBEB2103089A00CC09FD /* WriteToUserPostData.swift */,
+				274626DD21036073007D9727 /* GetEventsList.swift */,
 			);
 			path = PostData;
 			sourceTree = "<group>";
@@ -675,12 +692,14 @@
 				D80CE1CD20F890B90036297E /* ProfileViewController.swift in Sources */,
 				D80CE1D320F8939F0036297E /* BlockedUsersCell.swift in Sources */,
 				D82509F320E966FE00989E81 /* MembersBiographyController.swift in Sources */,
+				274626DE21036073007D9727 /* GetEventsList.swift in Sources */,
 				D82509F520E96DA500989E81 /* PartnersViewController.swift in Sources */,
 				277445AB20F89542004E5F2C /* Protocols.swift in Sources */,
 				27104083210203D9009DE217 /* KeyboardManagedViewController.swift in Sources */,
 				27D7526F20FCA0B600324F54 /* ConversationRoomInfo.swift in Sources */,
 				27422B7A20FE03F4008579A4 /* MessagePostData.swift in Sources */,
 				2745CF3E210123BB003C763A /* Texts.swift in Sources */,
+				274626DC2103601A007D9727 /* EventsList.swift in Sources */,
 				2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */,
 				2745DF5E21008F2A00E3ECCB /* ChangeUserProdilePostData.swift in Sources */,
 				27D7526920FC7A5800324F54 /* ViewLoader.swift in Sources */,
@@ -698,6 +717,7 @@
 				27745EE120FA25A8009F8061 /* PartnerList.swift in Sources */,
 				277445A520F8923F004E5F2C /* LoginPostData.swift in Sources */,
 				2745DF602100904A00E3ECCB /* AuthorizationPostData.swift in Sources */,
+				274626DA21035686007D9727 /* Event.swift in Sources */,
 				2741D9DB210289FC00277265 /* PageMetadata.swift in Sources */,
 				277445AD20F8B7BE004E5F2C /* Error.swift in Sources */,
 				277445BB20F8EC63004E5F2C /* Members.swift in Sources */,

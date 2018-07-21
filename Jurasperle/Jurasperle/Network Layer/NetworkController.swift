@@ -10,6 +10,12 @@ import UIKit
 
 class NetworkController
 {
+    static func getEventsList(_ postData: GetEventsListPostData, _ completion: @escaping (EventsList?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
     static func writeToUser(_ postData: WriteToUserPostData, _ completion: @escaping (ConversationRoomInfo?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!
