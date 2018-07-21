@@ -20,7 +20,6 @@ class ProfileViewController: UIViewController
     @IBOutlet weak var userBiography: UITextView!
     @IBOutlet weak var userPhotoGalleryCollection: UICollectionView!
     @IBOutlet weak var userGalleryImageCell: UIImageView!
-    @IBOutlet weak var bolkedUsersList: UITableView!
     @IBOutlet weak var userLogin: UITextField!
     @IBOutlet weak var userOldPassword: UITextField!
     @IBOutlet weak var userNewPassword: UITextField!
@@ -36,9 +35,8 @@ class ProfileViewController: UIViewController
     {
         super.viewDidLoad()
         self.setupUserData()
-        contacts.setUpContacts()
-        
-    
+        self.blokedUsersTable.delegate = self.contacts
+        self.blokedUsersTable.dataSource = self.contacts
     }
     
     func setupUserData()
@@ -59,9 +57,7 @@ class ProfileViewController: UIViewController
                         self.userBiography.text = user?.bio.ruString
                     }
                     self.userEmail.text = user?.email
-                    self.blokedUsersTable.delegate = self.blokedUsers
-                    self.blokedUsersTable.dataSource = self.blokedUsers
-                    self.blokedUsersTable.reloadData()
+                    self.contacts.setUpContacts(self.blokedUsersTable)
                 
                 }
             }

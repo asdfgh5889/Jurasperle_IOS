@@ -11,26 +11,18 @@ import UIKit
 class BlockedUsersTableViewController: NSObject, UITableViewDelegate, UITableViewDataSource
 {
     var contactList = ContactList()
-//    override func viewDidLoad()
-//    {
-//        super.viewDidLoad()
-//        setUpContacts()
-//    }
     
-    func setUpContacts()
+    func setUpContacts(_ tableView: UITableView)
     {
-        
         let pd = GetContactsPostData()
         NetworkController.getContacts(pd){ (contactList: ContactList?) in
             DispatchQueue.main.sync {
               if let contactList = contactList
                 {
                     self.contactList = contactList
-                    
-                    
+                    tableView.reloadData()
                 }
             }
-            
         }
     }
     
@@ -45,8 +37,8 @@ class BlockedUsersTableViewController: NSObject, UITableViewDelegate, UITableVie
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell  = tableView.dequeueReusableCell(withIdentifier: "blokedUsers")as! BlockedUsersCell
-        cell.userName.text = contactList.contacts[indexPath.row].name.ruString
+        let cell  = tableView.dequeueReusableCell(withIdentifier: "blokedUsers") as! BlockedUsersCell
+        cell.userName.text = contactList.contacts[indexPath.row].name.text
         
         return cell
     }
