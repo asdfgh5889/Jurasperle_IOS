@@ -18,6 +18,7 @@ class NewsViewController: UIViewController,  UITableViewDelegate, UITableViewDat
         newsTable.delegate = self
         newsTable.dataSource = self
         setUpNewsData()
+        self.title = "Новости"
     }
     
     

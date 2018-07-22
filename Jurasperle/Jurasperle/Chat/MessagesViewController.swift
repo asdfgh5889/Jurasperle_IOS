@@ -20,8 +20,11 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     var messages = [ChatMessage]()
     var conversationId: Int = 0
     var conversationPd: ConversationRoomPostData!
+    var conversarionRoomInfo: ConversationRoomInfo?
     var receiverUserId: Int?
-    var timer: Timer?
+    
+    fileprivate var timer: Timer?
+    fileprivate var listernerIsLoading = false
     fileprivate var isLoading: Bool = false
     
     override func viewDidLoad()
@@ -33,6 +36,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         self.messagesTableView.rowHeight = UITableViewAutomaticDimension
         self.messagesTableView.estimatedRowHeight = 50
         self.messagesTableView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        self.title = self.conversarionRoomInfo?.title
         
         let touch = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(touch)
@@ -63,29 +67,38 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         DispatchQueue.main.async {
-            if self.timer == nil
-            {
-                self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.checkForNewMessages), userInfo: nil, repeats: true)
-            }
+             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.checkForNewMessages), userInfo: nil, repeats: true)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        self.timer?.invalidate()
     }
     
     @objc func checkForNewMessages()
     {
-        if self.messages.count > 0
+        if self.messages.count > 0 && !self.listernerIsLoading
         {
+            self.listernerIsLoading = true
             NetworkController.getConversationRoom(ConversationRoomPostData(self.conversationId))
             { (room: ConversationRoom?) in
+                print("request")
                 if let room = room, let lastMessageId = self.messages.first!.id
                 {
-                    print(lastMessageId)
                     let newMessages = room.messages.filter({ message in
                         message.id! > lastMessageId
                     })
                     
                     DispatchQueue.main.sync {
                         self.putNewMessages(newMessages)
+                        self.listernerIsLoading = false
                     }
+                }
+                else
+                {
+                    self.listernerIsLoading = false
                 }
             }
         }
@@ -185,7 +198,6 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
         {
             let messageToPut = ChatMessage()
             messageToPut.id = (self.messages.first!.id ?? 0) + 1
-            print("id: \(messageToPut.id)")
             messageToPut.senderUserId = id
             messageToPut.text = message
             messages.append(messageToPut)

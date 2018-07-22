@@ -22,6 +22,7 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         setViewStyles()
+        self.title = " "
     }
     
     func setViewStyles()

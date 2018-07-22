@@ -17,10 +17,11 @@ class MembersViewController: UIViewController,UITableViewDataSource, UITableView
     var member = Members()
     var userIndex: Int = 0
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         setUpmemberData()
-        
+        self.title = "Члены клуба"
     }
     
     func setUpmemberData()

@@ -16,10 +16,11 @@ class PartnersViewController: UIViewController,UICollectionViewDelegate,UICollec
     var partnerlist = PartnerList()
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         setUpPartnerData()
-        
+        self.title = "Партнеры"
     }
     
     func setUpPartnerData()

@@ -21,6 +21,7 @@ class ChatsTableViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         self.tableview.dataSource = self
         self.tableview.delegate = self
+        self.title = "Чат"
         ViewLoader.showLoaderView(for: self.view)
         NetworkController.getConversationList(ConversationsPostData()) {
             (conversationList: ConversationList?) in
@@ -84,6 +85,7 @@ class ChatsTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 let index = sender as? Int
             {
                 controller.conversationId = self.conversationList?.conversationRooms[index].id ?? 0
+                controller.conversarionRoomInfo = self.conversationList?.conversationRooms[index]
             }
         }
     }

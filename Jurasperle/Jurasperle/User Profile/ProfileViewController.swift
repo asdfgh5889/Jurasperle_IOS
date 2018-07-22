@@ -38,6 +38,7 @@ class ProfileViewController: UIViewController
         self.setupUserData()
         self.blokedUsersTable.delegate = self.contacts
         self.blokedUsersTable.dataSource = self.contacts
+        self.title = "Профиль"
     }
     
     func setupUserData()

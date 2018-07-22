@@ -14,10 +14,11 @@ class GalleryViewController: UIViewController,UICollectionViewDataSource,UIColle
     
     @IBOutlet weak var galleryCollection: UICollectionView!
     var gallery = Gallery()
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         setUpGallery()
-        
+        self.title = "Фотогалерея"
     }
     
     func setUpGallery()
