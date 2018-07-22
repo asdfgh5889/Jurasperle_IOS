@@ -10,6 +10,13 @@ import UIKit
 
 class NetworkController
 {
+    static func registerDeviceToken(_ postData: RegisterDeviceToken, _ completion: @escaping (GeneralResponse?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
+    
     static func getEventsList(_ postData: GetEventsListPostData, _ completion: @escaping (EventsList?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!

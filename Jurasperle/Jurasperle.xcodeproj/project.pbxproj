@@ -30,6 +30,8 @@
 		274626DA21035686007D9727 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274626D921035686007D9727 /* Event.swift */; };
 		274626DC2103601A007D9727 /* EventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274626DB2103601A007D9727 /* EventsList.swift */; };
 		274626DE21036073007D9727 /* GetEventsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274626DD21036073007D9727 /* GetEventsList.swift */; };
+		274626E0210364F8007D9727 /* MessagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274626DF210364F8007D9727 /* MessagingController.swift */; };
+		274626E22103731D007D9727 /* RegisterDeviceToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274626E12103731D007D9727 /* RegisterDeviceToken.swift */; };
 		2747E5F320FAA21B000814C7 /* GalleryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F220FAA21B000814C7 /* GalleryItem.swift */; };
 		2747E5F520FAA6D4000814C7 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F420FAA6D4000814C7 /* Gallery.swift */; };
 		2747E5F720FAA745000814C7 /* GalleryPostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2747E5F620FAA745000814C7 /* GalleryPostData.swift */; };
@@ -118,6 +120,8 @@
 		274626D921035686007D9727 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		274626DB2103601A007D9727 /* EventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsList.swift; sourceTree = "<group>"; };
 		274626DD21036073007D9727 /* GetEventsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsList.swift; sourceTree = "<group>"; };
+		274626DF210364F8007D9727 /* MessagingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingController.swift; sourceTree = "<group>"; };
+		274626E12103731D007D9727 /* RegisterDeviceToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceToken.swift; sourceTree = "<group>"; };
 		2747E5F220FAA21B000814C7 /* GalleryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryItem.swift; sourceTree = "<group>"; };
 		2747E5F420FAA6D4000814C7 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		2747E5F620FAA745000814C7 /* GalleryPostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPostData.swift; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 				2710408421022AE5009DE217 /* LogoutPostData.swift */,
 				27F4FBEB2103089A00CC09FD /* WriteToUserPostData.swift */,
 				274626DD21036073007D9727 /* GetEventsList.swift */,
+				274626E12103731D007D9727 /* RegisterDeviceToken.swift */,
 			);
 			path = PostData;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				27F4FBE92102AD7C00CC09FD /* NotificationController.swift */,
+				274626DF210364F8007D9727 /* MessagingController.swift */,
 			);
 			path = "Notification Controller";
 			sourceTree = "<group>";
@@ -716,6 +722,7 @@
 				27422B6B20FDE66A008579A4 /* ConversationRoomInfoPostData.swift in Sources */,
 				D819C65620FFEC7C00FBDD9F /* PartnerCell.swift in Sources */,
 				277445AF20F8B86C004E5F2C /* Utilities.swift in Sources */,
+				274626E22103731D007D9727 /* RegisterDeviceToken.swift in Sources */,
 				D81BE80820F698B800E23EBF /* ChatsTableViewController.swift in Sources */,
 				27745EE120FA25A8009F8061 /* PartnerList.swift in Sources */,
 				277445A520F8923F004E5F2C /* LoginPostData.swift in Sources */,
@@ -744,6 +751,7 @@
 				D81D213B2100D7AE006AAD20 /* MoreNewsViewController.swift in Sources */,
 				27D7527920FCC24F00324F54 /* ConversationList.swift in Sources */,
 				2741D9DD21028D1800277265 /* HasPagination.swift in Sources */,
+				274626E0210364F8007D9727 /* MessagingController.swift in Sources */,
 				2774459E20F89103004E5F2C /* NetworkController.swift in Sources */,
 				27422B7D20FE253E008579A4 /* News.swift in Sources */,
 				D811AA442101E97F00962247 /* EventsViewController.swift in Sources */,

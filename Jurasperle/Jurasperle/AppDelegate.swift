@@ -9,20 +9,24 @@
 import UIKit
 import Firebase
 import UserNotifications
+import Messages
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data)
+    {
+        print("test")
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         FirebaseApp.configure()
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = NotificationController() 
-            
+            UNUserNotificationCenter.current().delegate = NotificationController()
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
@@ -34,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
+        Messaging.messaging().delegate = MessagingContrller()
         
         UINavigationBar.appearance().tintColor = .white
         UIApplication.shared.statusBarStyle = .lightContent
@@ -56,6 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "MainView")
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
+            
+            NetworkController.registerDeviceToken(RegisterDeviceToken(InstanceID.instanceID().token()))
+            { (_ response: GeneralResponse?) in
+                print(response?.errorCode)
+            }
         }
         
         return true
