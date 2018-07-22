@@ -79,7 +79,6 @@ class NetworkController
     
     static func getConversationRoom(_ postData: ConversationRoomPostData, _ completion: @escaping (ConversationRoom?) -> Void)
     {
-        print(postData.getPath())
         let request = RequestController.generateRequest(postData)!
         fetchRawData(request, completion)
     }
@@ -179,7 +178,7 @@ class NetworkController
         }
         catch
         {
-            print(String(data: data, encoding: .utf8))
+            //print(String(data: data, encoding: .utf8))
             print(error.localizedDescription)
             return nil
         }

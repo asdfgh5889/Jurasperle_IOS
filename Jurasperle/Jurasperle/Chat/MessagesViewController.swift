@@ -21,7 +21,7 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
     var conversationId: Int = 0
     var conversationPd: ConversationRoomPostData!
     var receiverUserId: Int?
-    
+    var timer: Timer?
     fileprivate var isLoading: Bool = false
     
     override func viewDidLoad()
@@ -57,6 +57,34 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
                     else
                     {
                         ViewLoader.hideLoaderView(for: self.view)
+                    }
+                }
+            }
+        }
+        
+        DispatchQueue.main.async {
+            if self.timer == nil
+            {
+                self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.checkForNewMessages), userInfo: nil, repeats: true)
+            }
+        }
+    }
+    
+    @objc func checkForNewMessages()
+    {
+        if self.messages.count > 0
+        {
+            NetworkController.getConversationRoom(ConversationRoomPostData(self.conversationId))
+            { (room: ConversationRoom?) in
+                if let room = room, let lastMessageId = self.messages.first!.id
+                {
+                    print(lastMessageId)
+                    let newMessages = room.messages.filter({ message in
+                        message.id! > lastMessageId
+                    })
+                    
+                    DispatchQueue.main.sync {
+                        self.putNewMessages(newMessages)
                     }
                 }
             }
@@ -145,16 +173,40 @@ class MessagesViewController: UIViewController, UITableViewDelegate, UITableView
             NetworkController.sendMessage(MessagePostData(text, self.conversationId))
             { (room: ConversationRoomInfo?) in
             }
-            
-            let messageToSend = ChatMessage()
-            messageToSend.senderUserId = UserGlobalData.auth.id
-            messageToSend.text = text
-            self.messagesTableView.beginUpdates()
-            messages.insert(messageToSend, at: 0)
-            self.messagesTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .top)
-            self.messagesTableView.endUpdates()
+            putMessagesWith(id: UserGlobalData.auth.id, messages: [text])
         }
         ownerTextField.text = ""
+    }
+    
+    func putMessagesWith(id: Int?, messages texts: [String?])
+    {
+        var messages = [ChatMessage]()
+        for message in texts
+        {
+            let messageToPut = ChatMessage()
+            messageToPut.id = (self.messages.first!.id ?? 0) + 1
+            print("id: \(messageToPut.id)")
+            messageToPut.senderUserId = id
+            messageToPut.text = message
+            messages.append(messageToPut)
+        }
+        
+        putNewMessages(messages)
+    }
+    
+    func putNewMessages(_ messages: [ChatMessage])
+    {
+        var indexpaths = [IndexPath]()
+        
+        for index in 0..<messages.count
+        {
+            indexpaths.append(IndexPath(row: index, section: 0))
+        }
+        
+        self.messages.insert(contentsOf: messages, at: 0)
+        self.messagesTableView.beginUpdates()
+        self.messagesTableView.insertRows(at: indexpaths, with: .top)
+        self.messagesTableView.endUpdates()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
