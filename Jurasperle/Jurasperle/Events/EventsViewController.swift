@@ -8,15 +8,18 @@
 
 import UIKit
 import Kingfisher
-class EventsViewController: UITableViewController,UIWebViewDelegate {
+class EventsViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var eventsTable: UITableView!
     var eventList = EventsList()
     
    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpEvents()
-         self.tableView.backgroundView = UIImageView(image: UIImage(named: "non_main_bg")!)
+        eventsTable.delegate = self
+        eventsTable.dataSource = self
+        self.title = "Мероприятия" 
     
     }
     
@@ -30,56 +33,39 @@ class EventsViewController: UITableViewController,UIWebViewDelegate {
                 if let eventList = eventList
                 {
                     self.eventList = eventList
-                    self.tableView.reloadData()
+                    self.eventsTable.reloadData()
                 }
             }
          }
     }
     
-   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventList.events.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventCell
         let dates = eventList.events[indexPath.row].holdDates.joined(separator: ", ")
-        cell.eventWebView.delegate = self
-      
-        var content = "<div style=\"color: #E8AE37; padding: 8px\"> <p style=\"font-size: 17px\">\(dates)</p><p style=\"font-size: 22px\">\(eventList.events[indexPath.row].title.text ?? "")</p></div>"
+        cell.eventDate.text = dates
+        let string1 = eventList.events[indexPath.row].description.text?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        let eventContent = string1?.replacingOccurrences(of: "&[^;]+;", with: "", options: String.CompareOptions.regularExpression, range: nil)
+        cell.eventTitle.text = eventList.events[indexPath.row].title.text
+        cell.eventDescription.text = eventContent
+        cell.eventCover.kf.setImage(with: URL(string: eventList.events[indexPath.row].coverImageURLStr!))
         
-        var contentImages = "<div id='carousel'>"
-        contentImages.append("<div><img class='object-fit_cover' src='\( eventList.events[indexPath.row].coverImageURLStr ?? "")' /></div>")
-        
-        content.append("</div>")
-        content.append(contentImages)
-        content.append(eventList.events[indexPath.row].description.text!)
-        
-        cell.eventWebView.loadHTMLString(content, baseURL: nil)
-        cell.eventWebView.frame = CGRect(x: 0, y: 0, width: cell.frame.size.width, height: cell.frame.size.height)
-        
-       
         return cell
     }
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool
-    {
-        ViewLoader.showLoaderView(for: self.view)
-        if navigationType == UIWebViewNavigationType.linkClicked {
-            UIApplication.shared.openURL(request.url!)
-            return false
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "moreEvent"
+        {
+            if let controller = segue.destination as? MoreEventsController, let moreInfoButton = sender as? UIButton
+            {
+                controller.events = eventList.events[moreInfoButton.tag]
+            }
         }
-        return true
     }
-    
-    func webViewDidFinishLoad(_ webView: UIWebView)
-    {
-        ViewLoader.hideLoaderView(for: self.view)
-        let css = "body { color : #fff } #carousel  { width: 100%; height: 200px; background-color: transparent;  padding-top: 40px;}  #carousel .object-fit_cover { object-fit: cover } #carousel img { height: 200px; background-color: transparent;}"
-        let js = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
-        
-        webView.stringByEvaluatingJavaScript(from: js)
-    }
-    
-    
    
 }

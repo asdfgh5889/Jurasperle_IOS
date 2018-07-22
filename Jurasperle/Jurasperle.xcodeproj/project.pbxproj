@@ -94,6 +94,7 @@
 		D82509F720E9702A00989E81 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82509F620E9702A00989E81 /* GalleryViewController.swift */; };
 		D85929A720E9142600DBECAC /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85929A620E9142600DBECAC /* MembersViewController.swift */; };
 		D85929AB20E9159200DBECAC /* MembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85929AA20E9159200DBECAC /* MembersCell.swift */; };
+		D8622418210532F500259763 /* MoreEventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8622417210532F500259763 /* MoreEventsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,6 +189,7 @@
 		D82509F620E9702A00989E81 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		D85929A620E9142600DBECAC /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		D85929AA20E9159200DBECAC /* MembersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersCell.swift; sourceTree = "<group>"; };
+		D8622417210532F500259763 /* MoreEventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreEventsController.swift; sourceTree = "<group>"; };
 		EDC45EA5BA7DE5FF9114FE6C /* Pods-Jurasperle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jurasperle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jurasperle/Pods-Jurasperle.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -490,6 +492,7 @@
 			children = (
 				D811AA432101E97F00962247 /* EventsViewController.swift */,
 				D817A08721036B4D009233C6 /* EventCell.swift */,
+				D8622417210532F500259763 /* MoreEventsController.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				27D7526A20FC7A5800324F54 /* LoaderButton.swift in Sources */,
 				D82509F720E9702A00989E81 /* GalleryViewController.swift in Sources */,
 				D81BE80A20F698B800E23EBF /* MessagesViewController.swift in Sources */,
+				D8622418210532F500259763 /* MoreEventsController.swift in Sources */,
 				D85929A720E9142600DBECAC /* MembersViewController.swift in Sources */,
 				27745EDF20FA10A8009F8061 /* Partner.swift in Sources */,
 				2745DF6221009AC100E3ECCB /* Contact.swift in Sources */,

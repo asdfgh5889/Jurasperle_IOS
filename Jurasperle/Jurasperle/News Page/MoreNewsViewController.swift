@@ -53,13 +53,5 @@ class MoreNewsViewController: UIViewController, UIWebViewDelegate
         webView.stringByEvaluatingJavaScript(from: js)
     }
     
-//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!)
-//    {
-//
-//        let css = "body { color : #000000 }"
-//
-//        let js = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
-//
-//        webView.evaluateJavaScript(js, completionHandler: nil)
-//    }
+
 }
