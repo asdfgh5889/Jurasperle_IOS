@@ -47,7 +47,7 @@ class MembersViewController: UIViewController,UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell") as! MembersCell
-        cell.memberNameLable.text = member.users[indexPath.row].name.ruString
+        cell.memberNameLable.text = member.users[indexPath.row].name.text
         cell.memberImageCell.kf.setImage(with: URL(string: member.users[indexPath.row].photoURLStr!))
         cell.moreInfo.tag = indexPath.row
         cell.sendMessage.tag = member.users[indexPath.row].userId ?? 0

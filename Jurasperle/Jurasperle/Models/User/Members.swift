@@ -33,3 +33,27 @@ class Members: Mapable
         return true
     }
 }
+
+class BlockedUsers: Mapable
+{
+    var userIds = [Int]()
+    required init() {}
+    @discardableResult func mapData(fromJson json: Any) -> Bool
+    {
+        
+        guard let data = JurasperleAPI.dataArrayUnwrapper(json) else
+        {
+            return false
+        }
+        
+        for idJson in data
+        {
+            if let id = Utilities.ToInt(from: idJson)
+            {
+                self.userIds.append(id)
+            }
+        }
+        
+        return true
+    }
+}

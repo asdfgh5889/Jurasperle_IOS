@@ -56,9 +56,9 @@ class PartnersViewController: UIViewController,UICollectionViewDelegate,UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "partnerCell", for: indexPath)as! PartnerCell
         cell.backgrounImage.kf.setImage(with: URL(string: partnerlist.partners[indexPath.row].logoURLStr!))
         cell.phoneNumber.text = partnerlist.partners[indexPath.row].phonenumber
-        cell.address.text = partnerlist.partners[indexPath.row].address.ruString
+        cell.address.text = partnerlist.partners[indexPath.row].address.text
         cell.webPageLink.text = partnerlist.partners[indexPath.row].website
-        cell.titleLabel.text = partnerlist.partners[indexPath.row].title.ruString
+        cell.titleLabel.text = partnerlist.partners[indexPath.row].title.text
         return cell
     }
     

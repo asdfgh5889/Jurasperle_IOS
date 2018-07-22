@@ -55,12 +55,14 @@ class NewsViewController: UIViewController,  UITableViewDelegate, UITableViewDat
         
         return newsList.news.count
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell") as! NewsCell
         cell.newsDate.text = newsList.news[indexPath.row].publishData
-        cell.newsTitle.text = newsList.news[indexPath.row].title.ruString
-        let string1 = newsList.news[indexPath.row].content.ruString?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        cell.newsTitle.text = newsList.news[indexPath.row].title.text
+        let string1 = newsList.news[indexPath.row].content.text?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         let newsContent = string1?.replacingOccurrences(of: "&[^;]+;", with: "", options: String.CompareOptions.regularExpression, range: nil)
+        
         cell.newsBody.text = newsContent
         cell.moreButton.tag = indexPath.row
         

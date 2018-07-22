@@ -7,9 +7,24 @@
 //
 
 import Foundation
+import UIKit
 
 class Utilities
 {
+    static func findFirstResponder(inView view: UIView) -> UIView? {
+        for subView in view.subviews as! [UIView] {
+            if subView.isFirstResponder {
+                return subView
+            }
+            
+            if let recursiveSubView = self.findFirstResponder(inView: subView) {
+                return recursiveSubView
+            }
+        }
+        
+        return nil
+    }
+    
     static func isPhonenumber(_ string: String) -> String?
     {
         let phoneRange = string.range(of: "^(\\+)(\\d{12})$|^(998)(\\d{9})$|^(\\d{9})$", options: .regularExpression)

@@ -17,8 +17,8 @@ class MoreNewsViewController: UIViewController, UIWebViewDelegate
     {
         super.viewDidLoad()
         newsBody.delegate = self
-        var content = "<div style=\"color: #E8AE37; padding: 8px\"> <p style=\"font-size: 17px\">\(news.publishData ?? "")</p><p style=\"font-size: 22px\">\(news.title.ruString ?? "")</p></div>"
-        content.append(news.content.ruString!)
+        var content = "<div style=\"color: #E8AE37; padding: 8px\"> <p style=\"font-size: 17px\">\(news.publishData ?? "")</p><p style=\"font-size: 22px\">\(news.title.text ?? "")</p></div>"
+        content.append(news.content.text ?? "")
         
         if news.images.count > 0
         {

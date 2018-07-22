@@ -30,14 +30,14 @@ class MembersBiographyController: UIViewController {
     {
         
         ImageCell.kf.setImage(with: URL(string: user.photoURLStr!))
-        memberName.text = user.name.ruString
-        memberWorkPlace.text = user.workPlace.ruString
+        memberName.text = user.name.text
+        memberWorkPlace.text = user.workPlace.text
         
         memberAmpula.text += user.ampula
        
-        if user.bio.ruString != nil
+        if user.bio.text != nil
         {
-            memberBio.text = user.bio.ruString
+            memberBio.text = user.bio.text
         }
         else
         {

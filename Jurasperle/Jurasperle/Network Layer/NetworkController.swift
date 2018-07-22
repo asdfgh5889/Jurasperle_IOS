@@ -10,6 +10,18 @@ import UIKit
 
 class NetworkController
 {
+    static func setBlockedUsers(_ postData: SetBlockedUsers, _ completion: @escaping (GeneralResponse?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
+    static func getBlockedUsers(_ postData: GetBlockedUsers, _ completion: @escaping (BlockedUsers?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
     static func registerDeviceToken(_ postData: RegisterDeviceToken, _ completion: @escaping (GeneralResponse?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!

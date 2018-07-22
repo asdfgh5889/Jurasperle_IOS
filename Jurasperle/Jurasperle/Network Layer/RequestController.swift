@@ -83,6 +83,7 @@ class RequestController
                 do
                 {
                     request.httpBody = try JSONSerialization.data(withJSONObject: pdWithJsonBody.getJsonBody()!)
+                    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                 }
                 catch
                 {
