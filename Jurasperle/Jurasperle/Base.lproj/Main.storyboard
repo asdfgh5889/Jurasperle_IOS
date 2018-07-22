@@ -469,9 +469,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="578.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="But-or-MpD">
+                                        <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="But-or-MpD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="578.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="578.5" id="ebF-Ri-yjq"/>
                                             </constraints>
@@ -501,7 +501,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ma5-Bz-N4M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-370" y="-657"/>
+            <point key="canvasLocation" x="-370" y="-746"/>
         </scene>
         <!--Members View Controller-->
         <scene sceneID="B2V-is-CFK">
