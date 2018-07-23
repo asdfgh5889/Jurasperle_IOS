@@ -27,8 +27,6 @@ class MembersCell: UITableViewCell {
         memberImageCell.clipsToBounds = true
         sendMessage.clipsToBounds = true
         moreInfo.clipsToBounds = true
-        sendMessage.layer.cornerRadius = 8
-        moreInfo.layer.cornerRadius = 8
         sendMessage.layer.borderWidth = 1
         sendMessage.layer.borderColor = UIColor.gray.cgColor
         moreInfo.layer.borderWidth = 1

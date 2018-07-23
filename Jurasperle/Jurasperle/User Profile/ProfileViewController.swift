@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController
     @IBOutlet weak var webPageLink: UITextField!
     @IBOutlet weak var Ampula: UITextField!
     @IBOutlet weak var userEmail: UITextField!
-    @IBOutlet weak var userBiography: UITextView!
+    @IBOutlet weak var userBiography: UITextField!
     @IBOutlet weak var userPhotoGalleryCollection: UICollectionView!
     @IBOutlet weak var userOldPassword: UITextField!
     @IBOutlet weak var userNewPassword: UITextField!
@@ -28,7 +28,8 @@ class ProfileViewController: UIViewController
     @IBOutlet var blokedUsersTable: UITableView!
     @IBOutlet var userName: UITextField!
     @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
-    
+
+    var user: User?
     var blokedUsers = BlockedUsersTableViewController()
     override func viewDidLoad()
     {
@@ -39,6 +40,17 @@ class ProfileViewController: UIViewController
         self.title = "Профиль"
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        
+        self.userName.tag = 0
+        self.userDateOfBirth.tag = 1
+        self.userWorkPlace.tag = 2
+        self.webPageLink.tag = 3
+        self.Ampula.tag = 4
+        self.userEmail.tag = 5
+        self.userBiography.tag = 6
+        self.userOldPassword.tag = 7
+        self.userNewPassword.tag = 8
+        self.passwordConfirimation.tag = 9
     }
     
     @objc func dismissKeyboard()
@@ -55,6 +67,7 @@ class ProfileViewController: UIViewController
                 ViewLoader.hideLoaderView(for: self.view)
                 if user != nil
                 {
+                    self.user = user
                     self.userDateOfBirth.text = user?.birthDate
                     self.userWorkPlace.text = user?.workPlace.text
                     self.webPageLink.text = user?.website
@@ -92,6 +105,24 @@ class ProfileViewController: UIViewController
         }
     }
     
+    @IBAction func changeUserData(_ textField: UITextField)
+    {
+        switch textField.tag {
+        case 0: self.user!.name += textField.text
+        case 1: self.user!.birthDate = textField.text
+        case 2: self.user!.workPlace += textField.text
+        case 3: self.user!.website = textField.text
+        case 4: self.user!.ampula += textField.text
+        case 5: self.user!.email = textField.text
+        case 6: self.user!.bio += textField.text
+        case 7: print()
+        case 8: print()
+        case 9: print()
+        default:
+            print("no")
+        }
+    }
+    
     @IBAction func saveButtonAction(_ sender: Any)
     {
         let alert = UIAlertController(title: "", message: "Вы хотите все сохранить?", preferredStyle: .alert)
@@ -100,11 +131,45 @@ class ProfileViewController: UIViewController
             }}())
         let delete = UIAlertAction(title: "Да", style: .destructive, handler: {
         { (action: UIAlertAction) in
-            self.blokedUsers.saveBlockedUsers()
+            self.saveUserProfile()
         }}())
         alert.addAction(delete)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func cancelProfile()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func saveUserProfile()
+    {
+        self.blokedUsers.saveBlockedUsers()
+        NetworkController.changeUserProfileData(ChangeUserProfilePostData(self.user!)) { (user: User?) in
+            self.user = user
+        }
+        
+        if (self.userOldPassword.text ?? "") == UserGlobalData.password!
+        {
+            NetworkController.setPassword(ChangeUserPassword(self.userOldPassword.text ?? "", self.userNewPassword.text ?? "", self.passwordConfirimation.text ?? ""))
+            { (_: GeneralResponse?) in
+            }
+        }
+        self.cancelProfile()
+//        else
+//        {
+//            let alert = UIAlertController(title: "", message: "Неверный старый пароль", preferredStyle: .alert)
+//            let cancel = UIAlertAction(title: "Отмена", style: .cancel, handler: {{ (action: UIAlertAction) in
+//                alert.dismiss(animated: true, completion: nil)
+//                }}())
+//            let delete = UIAlertAction(title: "Ок", style: .destructive, handler: {
+//            { (action: UIAlertAction) in
+//                self.saveUserProfile()
+//                }}())
+//            alert.addAction(delete)
+//            alert.addAction(cancel)
+//            self.present(alert, animated: true, completion: nil)
+//        }
+    }
 }

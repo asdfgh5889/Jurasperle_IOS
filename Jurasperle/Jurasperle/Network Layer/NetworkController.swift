@@ -10,6 +10,12 @@ import UIKit
 
 class NetworkController
 {
+    static func setPassword(_ postData: ChangeUserPassword, _ completion: @escaping (GeneralResponse?) -> Void)
+    {
+        let request = RequestController.generateRequest(postData)!
+        fetchRawData(request, completion)
+    }
+    
     static func setBlockedUsers(_ postData: SetBlockedUsers, _ completion: @escaping (GeneralResponse?) -> Void)
     {
         let request = RequestController.generateRequest(postData)!

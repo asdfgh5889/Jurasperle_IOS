@@ -14,7 +14,8 @@ class EventsViewController: UIViewController,  UITableViewDelegate, UITableViewD
     var eventList = EventsList()
     
    
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         setUpEvents()
         eventsTable.delegate = self
@@ -46,17 +47,17 @@ class EventsViewController: UIViewController,  UITableViewDelegate, UITableViewD
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventCell
         let dates = eventList.events[indexPath.row].holdDates.joined(separator: ", ")
-        cell.eventDate.text = dates
-        let string1 = eventList.events[indexPath.row].description.text?.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-        let eventContent = string1?.replacingOccurrences(of: "&[^;]+;", with: "", options: String.CompareOptions.regularExpression, range: nil)
+        cell.eventDate.text = "События состоится: \(dates)"
         cell.eventTitle.text = eventList.events[indexPath.row].title.text
-        cell.eventDescription.text = eventContent
         cell.eventCover.kf.setImage(with: URL(string: eventList.events[indexPath.row].coverImageURLStr!))
         
         return cell
     }
-    
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 380
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moreEvent"

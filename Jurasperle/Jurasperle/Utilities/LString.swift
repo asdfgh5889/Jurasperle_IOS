@@ -53,4 +53,16 @@ class LString: Mapable, JsonDecodable
     {
         left = UserGlobalData.language == Language.en ? right.enString: right.ruString
     }
+    
+    static func +=(left: inout LString, right: String?)
+    {
+        if UserGlobalData.language == .en
+        {
+            left.enString = right
+        }
+        else
+        {
+            left.ruString = right
+        }
+    }
 }

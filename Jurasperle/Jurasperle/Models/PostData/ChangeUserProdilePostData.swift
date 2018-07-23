@@ -32,7 +32,7 @@ class ChangeUserProfilePostData: PostDataProtocol, HasHeaderItems, HasJsonBody
     
     func getPath() -> String
     {
-        return JurasperleAPI.user
+        return JurasperleAPI.profile
     }
     
     func getJsonBody() -> HasJsonBody.JsonBody?
@@ -40,3 +40,44 @@ class ChangeUserProfilePostData: PostDataProtocol, HasHeaderItems, HasJsonBody
         return self.newUserData.getJsonData()
     }
 }
+
+
+class ChangeUserPassword: PostDataProtocol, HasHeaderItems, HasJsonBody
+{
+    var old: String
+    var new: String
+    var confirm: String
+    
+    init(_ old: String, _ new: String, _ confirm: String)
+    {
+        self.old = old
+        self.new = new
+        self.confirm = confirm
+    }
+    func getPath() -> String
+    {
+        return JurasperleAPI.password
+    }
+    
+    func getJsonBody() -> HasJsonBody.JsonBody?
+    {
+        var json = [String: Any]()
+        json["old_password"] = self.old
+        json["new_password"] = self.new
+        json["new_password_confirmation"] = self.confirm
+        return json
+    }
+    
+    func getMethod() -> HTTPMethods
+    {
+        return .post
+    }
+    
+    func getHeaderItmes() -> HeaderItems?
+    {
+        var header = [String: String]()
+        header["Authorization"] = "Bearer \(UserGlobalData.auth.apiToken ?? "")"
+        return header
+    }
+}
+

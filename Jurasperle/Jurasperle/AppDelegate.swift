@@ -64,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             NetworkController.registerDeviceToken(RegisterDeviceToken(InstanceID.instanceID().token()))
             { (_ response: GeneralResponse?) in
-                print(response?.errorCode)
             }
         }
         
